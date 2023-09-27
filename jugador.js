@@ -1,0 +1,3 @@
+/*
+Aqui estara la clase con los datos del jugador
+*/

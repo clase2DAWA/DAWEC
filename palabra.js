@@ -1,0 +1,3 @@
+/* 
+Aqui estara la clase para gestionar las palabras
+*/

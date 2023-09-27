@@ -1,0 +1,3 @@
+/*
+En esta clase crearemos la jugabilidad del ahorcado
+*/
