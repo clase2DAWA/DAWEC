@@ -1,4 +1,4 @@
-let JUGADOR = JUGADOR || {};
+let JUGADOR = {};
 JUGADOR.jugador = class {
     constructor() {
         vidas = 10;
@@ -12,3 +12,5 @@ JUGADOR.jugador = class {
         }
     }
 }
+
+export { JUGADOR };
