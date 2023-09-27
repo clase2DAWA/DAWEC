@@ -1,1 +1,4 @@
-a
+
+Vamos a programar el juego del ahorcado, el cual se basa en adivinar una palabra adivinando antes las distintas letras que la forman.
+Si aciertas una letra de la palabra, no se te restan vidas, pero en el caso de que la palabra sea por ejemplo "coche", y digas la palabra
+"a", se te restará una vida.
