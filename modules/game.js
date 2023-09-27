@@ -1,5 +1,5 @@
-export {Word}
-class Word{
+export {Game}
+class Game{
     constructor() {
                
     }
