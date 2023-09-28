@@ -1,6 +1,30 @@
 import { Word } from "./modules/word.js";
 let palabra = new Word();
-console.log(palabra.word());
+let manzana = "manzana";
+console.log(manzana.indexOf("z"));
+
+let letters = [];
+let position = manzana.indexOf("a");
+
+while (position != -1) {
+    letters.push(position);
+    position = manzana.indexOf("a", position + 1);
+}
+console.log(letters);
+
+let underscores = [];
+for (let i = 0; i < manzana.length; i++) {
+    underscores.push("_");
+
+}
+
+for (let i = 0; i < letters.length; i++) {
+    let letra = "a";
+    let indice = letters[i];
+    underscores[indice] = letra;
+
+}
+console.log(underscores);
 
 
 
