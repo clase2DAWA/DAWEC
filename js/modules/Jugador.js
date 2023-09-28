@@ -1,4 +1,5 @@
-class Jugador {
+let PLAYER = {};
+PLAYER.player = class Jugador {
   constructor(nombre) {
     this.nombre = nombre;
     this.vidas = 9;
@@ -10,4 +11,6 @@ class Jugador {
   restarVida() {
     this.vida -= 1;
   }
-}
+};
+
+export { PLAYER };
