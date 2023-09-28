@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+}
+div{
+    
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+div #cabecera{
+    border: 2px solid red;
+}
+div #dibujo{
+    border: 2px solid blue;
+}
+div #palabra{
+    border: 2px solid green;
+}
