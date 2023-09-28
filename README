@@ -1,0 +1,17 @@
+- Día 28 de septiembre: planteé hacer el proyecto con 3 clases (game, player y word).
+                        * La clase Word: implementaría un espacio de nombre que contendría la clase palabra,
+                                       cuya clase tendría un atributo de tipo array que contendría palabras
+                                       aleatorias. Además tendría un método el cual serviría para elegir una
+                                       palabra del array anterior y la guardaría en una variable.
+                        * La clase Player: implementaría un espacio de nombre que contendría la clase palabra,
+                                         cuya clase tendría un atributo con las vidas, que serían los intentos 
+                                         posibles para adivinar la palabra. Además tendría un método para 
+                                         descontar las vidas del jugador.
+                        * La clase Game: implementaría un espacio de nombre que contendría la clase palabra,
+                                       cuya clase tendría un constructor, donde se instancionaría un objeto Word
+                                       con la palabra aleatoria que el jugador tendría que adivinar y además un
+                                       jugador que sería quien tendría que adivinar la palabra. Además tendría
+                                       un método el cual serviría de cequeo de la palabra del jugador.
+                        1º Problema: ¿dónde debería ir la palabra random generada?¿En la clase Player o en la clase
+                                      Game?
+                        2º Problema: Uncaught SyntaxError: ambiguous indirect export: Player.

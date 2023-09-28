@@ -1,15 +1,12 @@
 var PLAYER = PLAYER || {};
 PLAYER.player = class Player{
     constructor(){
-        this.life = checkLife();
-        this.toy = ;
-
+        this.life = 5;
     }
 
-    checkLife(wordUser){
-        life = 5;
-        if(){
-            
-        }
+    checkLife(){
+        this.life--;
     }
 };
+
+export default PLAYER.player;
