@@ -9,7 +9,7 @@
 <body>
     <header>
         <div id="upperHeader">
-            <h1 id="logo">LOGO</h1>
+            <img id="logo" src="/img/logo.png" alt="logo"></img>
             <nav id="nav">
                 <ul>
                     <li><a href="/about">About</a></li>
@@ -18,29 +18,51 @@
             </nav>
         </div>
     </header>
-    <main>
+    <main class="bc-1 p1bot">
         <section>
-            <img id="mainMG" src="/img/main.jpg" alt="imgExample">
+            <img id="mainImg" src="/img/main.jpg" alt="imgExample">
         </section>
-        <div id="full-content">
-            <div class="left">
-
+        <div class="p1 introPhrase m2top">
+            <h2>Will you be brave and intelligent enough to overcome the challenge?</h2>
+        </div>
+        <div id="full-content" class="m2top">
+            <div class="left backNeui m1left m1right">
+                <div class="leftBox ta">
+                    <h3 class="ta p1">Rules</h3>
+                    <div class="">
+                        <h4 class="m1top m1bot m1right">1) Select Difficulty </h4>
+                        <select class="button m1bot" id="difficulty" name="options">
+                            <option value="easy">Easy</option>
+                            <option value="normal">Normal</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <h4 class="m1right m1bot">2) Start a Game</h4>
+                        <button class="button m1bot" id="play">Play Game</button>
+                    </div>
+                    <div class="">
+                        <h4 class="m1bot">3) Get fun</h4>
+                        <button class="button m1bot" id="restart">Restart</button>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="right">
-
+            <div class="right m1left backNeui">
+                    <h4>Lorem ipsum </h4>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy;2023 Clever Hands</p>
+    <footer class="bc-foo p1">
+        <p>&copy;2023 Clever Hands - All the right reserved</p>
     </footer>
 
 
-    <script type="module" src="js/levels.js"></script>
-    <script type="module" src="js/words.js"></script>
-    <script type="module" src="js/player.js"></script>
-    <script type="module" src="js/game.js"></script>
+    <script type="module" src="modules/levels.js"></script>
+    <script type="module" src="modules/words.js"></script>
+    <script type="module" src="modules/player.js"></script>
+    <script type="module" src="modules/game.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
