@@ -5,7 +5,7 @@ PALABRA.palabra = class Palabra {
     this.palabras = [
       { palabra: "rinoceronte", pista: "Vivo en los bosques de África" },
       { palabra: "manzana", pista: "Puedo ser roja y también verde" },
-      { palabra: "plátano", pista: "Crezco en los árboles" },
+      { palabra: "platano", pista: "Crezco en los árboles" },
       { palabra: "pantalla", pista: "Me usas sin parar" },
       { palabra: "bombilla", pista: "Sin mi no verías" },
       { palabra: "linterna", pista: "Tu mejor aliado en la oscuridad" },
@@ -60,6 +60,10 @@ PALABRA.palabra = class Palabra {
    */
   setLongitudPalabra() {
     this.longitudPalabra = this.palabra.length;
+  }
+
+  getPalabraArray() {
+    return this.palabra.split("");
   }
 };
 
