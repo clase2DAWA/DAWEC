@@ -1,20 +1,111 @@
-h1{
+* {
     text-align: center;
+    margin: 0;
 }
-div{
-    
-    flex-direction: center;
+
+p{
+    font-size: 10em;
+}
+
+html,body{
+    height: 100%;
+}
+
+img {
+    width: 815px;
+    height: auto;
+}
+
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: solid 2px black;
+}
+
+.cabecera {
+    display: flex;
     justify-content: center;
     align-items: center;
-
-}
-
-div #cabecera{
+    flex: 1;
     border: 2px solid red;
 }
-div #dibujo{
+
+.botonReset{
+    width: 50px;
+    height: auto;
+}
+
+.titulo{
+    border: 2px solid grey;
+    display: flex;
+    flex: 1;
+}
+.reset{
+    border: 2px solid crimson;
+    display: flex;
+    flex: 1;
+}
+
+.interfaz{
+    border: 2px solid purple ;
+    display: flex;
+    flex: 1;
+}
+
+.dibujo {
     border: 2px solid blue;
+    flex: 1;
 }
-div #palabra{
+.info{
+    border: 2px solid lawngreen;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.palabra{
+    border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+}
+
+.datos{
+    border: 2px solid violet;
+    display: flex;
+    flex: 1;
+}
+.vidas{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+}
+.crono{
+    border: 2px solid brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+}
+
+.teclado {
     border: 2px solid green;
+    flex: 1;
 }
+
+.boton{
+    margin-top: 15px;
+    margin-right: 5px;
+    width: 200px; /* Ancho del botón en píxeles */
+    height: 50px; /* Alto del botón en píxeles */
+    font-size: 18px; /* Tamaño de la fuente del texto del botón */
+}
+

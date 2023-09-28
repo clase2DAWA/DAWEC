@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js"></script>
-</head>
-
-<body>
-    <div id="contenedorPrincipal">
-        <div id="cabecera">
-            <h1>AHORCADO</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="main.js"></script>
+    </head>
+    <body>
+        <div class="contenedor">
+            <div class="cabecera">
+                <div class="titulo">
+                    <h1>AHORCADO</h1>
+                </div>
+                <div class="reset">
+                    <button>
+                        <img class="botonReset"src="Imagenes/restart-5.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="interfaz">
+                <div class="dibujo">
+                    <img id="graficos" src="TimeLapse/10.png" alt="">
+                </div>
+                <div class="info">
+                    <div class="datos">
+                        <div class="vidas">
+                            <h1>Vidas</h1>
+                            <h1>10</h1>
+                        </div>
+                        <div class="crono">
+                            <h1>Cronometro</h1>
+                            <h1>30s</h1>
+                        </div>
+                    </div>
+                    <div class="palabra">
+                        <p>----------</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="teclado">
+                <input class="boton" type="button" value="A">
+                <input class="boton" type="button" value="B">
+                <input class="boton" type="button" value="C">
+                <input class="boton" type="button" value="D">
+                <input class="boton" type="button" value="E">
+                <input class="boton" type="button" value="F">
+                <input class="boton" type="button" value="G">
+                <input class="boton" type="button" value="H">
+                <input class="boton" type="button" value="I">
+                <input class="boton" type="button" value="J">
+                <input class="boton" type="button" value="K">
+                <input class="boton" type="button" value="L">
+                <input class="boton" type="button" value="M">
+                <input class="boton" type="button" value="N">
+                <input class="boton" type="button" value="Ñ">
+                <input class="boton" type="button" value="O">
+                <input class="boton" type="button" value="P">
+                <input class="boton" type="button" value="Q">
+                <input class="boton" type="button" value="R">
+                <input class="boton" type="button" value="S">
+                <input class="boton" type="button" value="T">
+                <input class="boton" type="button" value="U">
+                <input class="boton" type="button" value="V">
+                <input class="boton" type="button" value="W">
+                <input class="boton" type="button" value="X">
+                <input class="boton" type="button" value="Y">
+                <input class="boton" type="button" value="Z">
+            </div>
         </div>
-        <div id="dibujo">
-
-        </div>
-        <div id="palabra">
-
-        </div>
-    </div>
-
-</body>
-
+    </body>
 </html>
