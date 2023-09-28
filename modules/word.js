@@ -1,6 +1,8 @@
 export {Word}
+let palabras = ['hola','adios'];
 class Word{
-    constructor() {
-               
+    getPalabraAleatoria() {
+        let palabraAleatoria = palabras[Math.floor(Math.random()*(palabra.length))]; 
+        return palabraAleatoria;
     }
 } 
