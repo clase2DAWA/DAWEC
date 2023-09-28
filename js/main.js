@@ -1,7 +1,29 @@
-import { PALABRA } from "./modules/Palabra.js";
+import { GAME } from "./modules/Juego.js";
 
-let word = new PALABRA.palabra();
+// Interface
+let disWord = document.getElementById("word");
+let disClue = document.getElementById("clue");
+let disLive = document.getElementById("lives");
+let letterIn = document.getElementById("userCaracter");
+let checkBtn = document.getElementById("check");
 
-console.log(word.palabra);
-console.log(word.pista);
-console.log(word.longitudPalabra);
+let partida = new GAME.game("Jugador1");
+
+// Mostramos la palabra oculta
+disWord.innerHTML = partida.hidesWord();
+
+// Seteamos la pista de la palabra
+disClue.innerHTML = partida.word.pista;
+
+// Seteamos las vidas que tiene
+disLive.innerHTML += partida.player.vidas;
+
+// Tests
+console.log(partida.contains("a"));
+
+checkBtn.onclick = function () {
+  // Comprobar el intento
+
+  // Actualizar salidas
+  disWord.innerHTML = partida.checkTry(letterIn.value);
+};
