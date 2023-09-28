@@ -2,22 +2,29 @@ class words {
     constructor() {
         //Arrays de palabras
         this.palabras = [
-            { palabra: "ordenador" },
-            { palabra: "ratón" },
-            { palabra: "teclado" },
-            { palabra: "pantalla" },
-            { palabra: "gráfica" },
-            { palabra: "tarjeta" },
-            { palabra: "cámara" },
-            { palabra: "cables" },
-            { palabra: "placa base" },
-            { palabra: "ventiladores" },
+            "ordenador",
+            "ratón",
+            "teclado",
+            "pantalla",
+            "gráfica",
+            "tarjeta",
+            "cámara",
+            "cables",
+            "placa base",
+            "ventiladores"
         ];
+        //Obtenemos un apalabra aleatoria
+        this.palabraAleatoria = this.palabras[Math.floor(Math.random() * this.palabras.length)];
+    }
+    
+    //Método para sacar una palabra aleatoria
+    obtenerPalabraAleatoria() {
+        return this.palabraAleatoria;
     }
 
-    obtenerPalabraAleatoria() {
-        const indiceAleatorio = Math.floor(Math.random() * this.palabras.length);
-        return this.palabras[indiceAleatorio];
+    //Método para sacar el largo de la palabras
+    longitudPalabra() {
+        return this.palabraAleatoria.length;
     }
 
 }
