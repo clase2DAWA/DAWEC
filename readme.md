@@ -6,9 +6,4 @@ This is a classroom exercise game developed in javascript vanilla. This project 
 
 ## Getting Started
 
-To get started with Hanged Game. Just run index.html
-
-
-Clase jugador, juego , palabras, nivels
-hacer readme
-mod,namespace
+To get started with Hanged Game just run index.html and follow the instructions
