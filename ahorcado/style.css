@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+}
+
+.hearts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hearts img{
+    width: 40px;
+    aspect-ratio: 1/1;/* hace que mantenga la proporción de la imagen */
+
+}
+
