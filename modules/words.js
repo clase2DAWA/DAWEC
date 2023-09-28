@@ -5,6 +5,8 @@ WORDS.words = class {
 
         this.numberLetter = Math.floor(Math.random);
         this.currentWord = "";
+        this.unlockedWord ="";
+        
 
     }
 

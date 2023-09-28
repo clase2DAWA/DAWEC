@@ -8,27 +8,24 @@
 </head>
 <body>
     <header>
-        <div id="upperHeader">
+    <!--<div id="upperHeader">
             <img id="logo" src="/img/logo.png" alt="logo"></img>
-            <nav id="nav">
+            <nav id="nav" class="p1 w80">
                 <ul>
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
-        </div>
+        </div>-->
     </header>
     <main class="bc-1 p1bot">
-        <section>
-            <img id="mainImg" src="/img/main.jpg" alt="imgExample">
+        <section class="">
+            <img id="mainImg" class="w100" src="/img/main.jpg" alt="imgExample">
         </section>
-        <div class="p1 introPhrase m2top">
-            <h2>Will you be brave and intelligent enough to overcome the challenge?</h2>
-        </div>
         <div id="full-content" class="m2top">
-            <div class="left backNeui m1left m1right">
-                <div class="leftBox ta">
-                    <h3 class="ta p1">Rules</h3>
+            <div class="justify backNeui m1left">
+                <div class="flexCol ta">
+                    <h3 class="ta p1">How Play?</h3>
                     <div class="">
                         <h4 class="m1top m1bot m1right">1) Select Difficulty </h4>
                         <select class="button m1bot" id="difficulty" name="options">
@@ -42,14 +39,37 @@
                         <button class="button m1bot" id="play">Play Game</button>
                     </div>
                     <div class="">
-                        <h4 class="m1bot">3) Get fun</h4>
+                        <h4 class="m1bot">3)Try again</h4>
                         <button class="button m1bot" id="restart">Restart</button>
                     </div>
                     
                 </div>
             </div>
-            <div class="right m1left backNeui">
-                    <h4>Lorem ipsum </h4>
+            <div class="centerRight">
+                <div id="center" class="flexCol w80">
+                    <div class="word-display" >
+                        <p>_ _ _ _ _ _ _ _ </p>
+                    </div>
+                    <div class="flexCol w20">
+                        <input type="text" class="buttonText m1bot"></input>
+                        <button id="tryWord" class="button">Try word</button>
+                    </div>
+                </div>
+                <div id="right" class="flexCol w13 ta backNeui">
+                    <h3 class="ta m2bot">Status</h3>
+                    <div>
+                        <h4 class="m1bot">Current Level</h4>
+                        <h4 id="currentLevel" class="m1bot">0</h4>
+                    </div>
+                    <div>
+                        <h4 class="m1bot">Current Life</h4>
+                        <h4 id="CurrentLife" class="m1bot">0</h4>
+                    </div>
+                    <div>
+                        <h4 class="m1bot">Current Life</h4>
+                        <h4 id="CurrentLife" class="m1bot">0</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
