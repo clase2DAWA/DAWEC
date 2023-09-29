@@ -1,13 +1,16 @@
-var PLAYER = PLAYER || {};
-PLAYER.player = class Player{
+export class Player{
     constructor(){
-        this.life = 5;
+        this.life = 9;
+        this.guess = [];
     }
 
     checkLife(){
         this.life--;
     }
 
-};
+    getCheckLife(){
+        return this.life;
+    }
 
-export default PLAYER.player;
+
+};

@@ -1,19 +1,37 @@
-var WORD = WORD || {};
-WORD.randomWord = 
-WORD.word = class Word{
+export class Word{
     constructor() {
         this.words = ["Browser", "Charger", "Desktop", "Gateway", "Hotspot", "Scanner", "Startup"];
-        this.wordRandom = this.words[Math.floor(Math.random() * this.words.length)];
+        this.word = this.chooseWordRandom().toLowerCase();
+        this.guessedLetter = new Array(this.word.length).fill('_');
+    }
+    
+    chooseWordRandom() {
+        return this.words[Math.floor(Math.random() * this.words.length)];
+    }
+
+    guessLetter(letter) {
+        letter = letter.toLowerCase();
+        let guess = false;
+        for (let i = 0; i < this.word.length; i++) {
+            if (this.word[i] === letter) {
+                this.guessedLetter[i] = letter;
+                guess = true;
+            }
+        }
+        return guess;
+    }
+
+    finishWord() {
+        return this.guessedLetter.indexOf('_') === -1;
       }
     
-    letterInWord(letter) {
-        let include = false;
-        if(this.word.includes(letter)){
-            include = true;
-        }
-        return include;
+
+    getGuessLetter() {
+        return this.guessedLetter.join(' ');
+    }
+
+    getWord(){
+        return this.word;
     }
 
 };
-
-export default WORD.word;
