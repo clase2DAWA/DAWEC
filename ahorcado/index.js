@@ -1,6 +1,11 @@
-let Ahorcado = Ahorcado || {};//namespace
+import {Game} from "./game.js";
+import {Player} from "./player.js";
+import {Word} from "./word.js";
 
-Ahorcado.Game = {};//declaración clase vacia
-Ahorcado.Player = {};//declaración clase vacia
-Ahorcado.Word = {};//declaración clase vacia
+var Ahorcado = Ahorcado || {};//namespace
+
+Ahorcado.Game = Game;//declaración clase vacia
+Ahorcado.Player = Player;//declaración clase vacia
+Ahorcado.Word = Word;//declaración clase vacia
+
 export {Ahorcado};
