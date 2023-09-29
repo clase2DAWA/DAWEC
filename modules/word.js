@@ -3,8 +3,7 @@ WORD.randomWord =
 WORD.word = class Word{
     constructor() {
         this.words = ["Browser", "Charger", "Desktop", "Gateway", "Hotspot", "Scanner", "Startup"];
-        this.indexRandom = Math.floor(Math.random() * this.words.length);
-        this.word = this.words[this.indexRandom];
+        this.wordRandom = this.words[Math.floor(Math.random() * this.words.length)];
       }
     
     letterInWord(letter) {
