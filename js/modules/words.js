@@ -1,17 +1,19 @@
-class words {
+let WORDS = {};
+
+WORDS.words = class words {
     constructor() {
         //Arrays de palabras
         this.palabras = [
-            "ordenador",
-            "ratón",
-            "teclado",
-            "pantalla",
-            "gráfica",
-            "tarjeta",
-            "cámara",
-            "cables",
-            "placa base",
-            "ventiladores"
+            "ORDENADOR",
+            "RATON",
+            "TECLADO",
+            "PANTALLA",
+            "GRAFICA",
+            "TARJETA",
+            "CAMARA",
+            "CABLES",
+            "PLACA BASE",
+            "VENTILADORES"
         ];
         //Obtenemos un apalabra aleatoria
         this.palabraAleatoria = this.palabras[Math.floor(Math.random() * this.palabras.length)];
@@ -28,3 +30,5 @@ class words {
     }
 
 }
+
+export{WORDS};
