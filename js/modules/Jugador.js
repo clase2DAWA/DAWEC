@@ -9,7 +9,8 @@ PLAYER.player = class Jugador {
    * Resta una vida al total de vidas del jugador
    */
   restarVida() {
-    this.vida -= 1;
+    this.vidas -= 1;
+    return this.vidas;
   }
 };
 
