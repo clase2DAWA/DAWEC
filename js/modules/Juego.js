@@ -3,12 +3,12 @@ import { PLAYER } from "./Jugador.js";
 
 let GAME = {};
 GAME.game = class Juego {
-  constructor(playerName) {
+  constructor() {
     // Constantes
     this.ERROR = "Esa letra no esta en esta palabra";
 
     // Atributos
-    this.player = new PLAYER.player(playerName);
+    this.player = new PLAYER.player();
     this.word = new PALABRA.palabra();
     this.arrWord = this.word.palabra.split("");
     this.hideWord = new Array();
@@ -63,6 +63,14 @@ GAME.game = class Juego {
       }
     }
     return acerted;
+  }
+
+  // Nueva partida
+  newGame() {
+    this.word.newPalabra();
+    this.player = new PLAYER.player();
+    this.arrWord = this.word.palabra.split("");
+    this.hidesWord();
   }
 };
 
