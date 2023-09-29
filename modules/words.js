@@ -1,3 +1,5 @@
+import { PLAYER } from "./player.js";
+
 var WORDS = WORDS || {};
 WORDS.words = class {
 
@@ -6,12 +8,26 @@ WORDS.words = class {
         this.currentGroupWords = this.selectGroupLetter();
         this.currentWord = this.generateWord().toLowerCase();
         this.unlockedWord ="";
+        this.underScore = this.createUnderscore();
+        this.found = false;
+        this.miss = 0;
+    }
+
+    createUnderscore() {
+
+        let underScore ="";
+
+        for (let i = 0; i < this.currentWord.length; i++) {
+            underScore += "_ ";
+        }
+        return underScore;
     }
 
     createWord() {
 
         this.selectGroupLetter();
         this.generateWord();
+        this.createUnderscore();
     }
 
     checkCurrentWord() {
@@ -19,23 +35,47 @@ WORDS.words = class {
         return this.currentWord;
     }
 
+    checkMiss() {
+        return this.miss;
+    }
+
+    checkFound(letter) {
+        return this.found
+        ? "Good! You found "+ letter+ "letter"
+        : missedLetter();
+    }
+
 
     compareLetter(letter){
 
         let correctedLetter = letter.toLowerCase().trim();
+        this.found = false;
 
         for (let i = 0; i < this.currentWord.length; i++) {
             if (correctedLetter == this.currentWord[i]){
-                return correctedLetter;
+                this.underScore = this.replaceLetter(i,letter)
+                this.found = true;
             }     
         }
+        checkFound(letter);
     }
 
-    compareReveal(){
-        return this.compareLetter(letter)
-        ? reveal()
-        : 
+    missedLetter() {
+
+        this.miss += 1
+        return "You missed the letter";
     }
+
+    replaceLetter(position,letter){
+
+        return this.underScore.replace(this.underScore[position], letter);
+    }
+
+    /*compareReveal(){
+        return this.compareLetter(letter)
+        ? this.reveal()
+        : 
+    }*/
 
     generateWord() {
 

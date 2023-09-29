@@ -10,8 +10,13 @@ GAME.game = class {
         this.player = new PLAYER.player;
         this.level = new LEVELS.levels;
         this.words = new WORDS.words;
-
     }
+
+    lose() {
+
+        return "You Lost! Are you happy?";
+    }
+
 
     nextLevel() {
 
@@ -20,6 +25,9 @@ GAME.game = class {
 
     play() {
         
+        this.words.createWord()
+        this.level.restartLevel();
+        this.player.restartLife();
 
     }
 
@@ -36,9 +44,6 @@ GAME.game = class {
             : undefined;
     }
 
-    lose() {
-
-    }
 
 
 

@@ -16,6 +16,7 @@ PLAYER.player = class {
         return this.checkLife() <= 0
     }
 
+
     gainLife() {
         return this.checkLife() <=4
         ? this.CurrentLife++
@@ -23,16 +24,16 @@ PLAYER.player = class {
 
     }
 
-    loseLife(){
+    loseLife() {
         return this.checkLife() >0
         ? this.CurrentLife--
         : this.dead = true;
     }
 
-    restartLife(){
+    restartLife() {
         this.currentLife = 5;
+        this.dead = false;
     }
 }
 
-
-export {PLAYER};
+export { PLAYER };
