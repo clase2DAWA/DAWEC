@@ -8,21 +8,17 @@ let letterIn = document.getElementById("userCaracter");
 let checkBtn = document.getElementById("check");
 let alimentacion = document.getElementById("retroAlimentacion");
 let askNewGame = document.getElementById("newGame");
+let noBtn = document.getElementById("no");
+let yesBtn = document.getElementById("yes");
 
 // Juego
-let partida = new GAME.game("Jugador1");
+let partida = new GAME.game();
 
 // Ocultar palabra
 partida.hidesWord();
 
-// Mostramos la palabra oculta
-disWord.innerHTML = partida.showHideWord();
-
-// Seteamos la pista de la palabra
-disClue.innerHTML = partida.word.pista;
-
-// Seteamos las vidas que tiene
-disLive.innerHTML += partida.player.vidas;
+// ARRANCAMOS EL JUEGO
+startGame();
 
 // Tests
 
@@ -44,6 +40,37 @@ checkBtn.onclick = function () {
   }
 };
 
+letterIn.onfocus = function () {
+  letterIn.value = "";
+};
+
 function askForLeave() {
   askNewGame.style.display = "block";
+  letterIn.disabled = true;
+  checkBtn.disabled = true;
 }
+
+function startGame() {
+  // Mostramos la palabra oculta
+  disWord.innerHTML = partida.showHideWord();
+
+  // Seteamos la pista de la palabra
+  disClue.innerHTML = partida.word.pista;
+
+  // Seteamos las vidas que tiene
+  disLive.innerHTML += partida.player.vidas;
+
+  // Comprobaciones
+  askNewGame.style.display = "none";
+  letterIn.disabled = false;
+  checkBtn.disabled = false;
+}
+
+noBtn.onclick = function () {
+  window.close();
+};
+
+yesBtn.onclick = function () {
+  partida.newGame();
+  startGame();
+};
