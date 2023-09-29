@@ -14,4 +14,21 @@
                                        un método el cual serviría de cequeo de la palabra del jugador.
                         1º Problema: ¿dónde debería ir la palabra random generada?¿En la clase Player o en la clase
                                       Game?
-                        2º Problema: Uncaught SyntaxError: ambiguous indirect export: Player.
+                                      Se genera en la clase Word, ya que el jugador y la palabra aleatoria no tienen
+                                      nada que ver, no necesitan una de la otra, por tanto van por separado.
+                        2º Problema: Uncaught SyntaxError: ambiguous indirect export: Player. 
+                                     Implementando el juego como lo pensé de primeras, me surgía este error, el cual 
+                                     intentaré arreglar planteando el juego de diferente manera.
+
+
+- Día 29 de septiembre: 1º Problema: planteamiento de las clases mal pensado. Pienso que la tengo mal planteada, ya 
+                                     que no contemplaba la idea de que el jugador fuese introduciendo letras e ir 
+                                     eliminando vidas si la letra no está en la palabra.
+                                        + Clase Word: plasmar en el contructor, el array de palabras, un índice 
+                                                      aleatorio dentro del rango del array y la palabra escogida
+                                                      que se hace atraves del indice aleatorio y el array de palabra.
+                                                      Además de crear un método que verifique si una letra está en la 
+                                                      palabra generada aleatoriamente.
+                                        + Clase Player: por ahora pienso que está bien pensada, que no le falta nada más.
+                                        + Clase Game: está pensada si el jugador introduciese palabras enteras y no solo 
+                                                      letras.
