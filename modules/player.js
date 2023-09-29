@@ -18,7 +18,7 @@ PLAYER.player = class {
 
     checkLife() {
         
-        return this.life;
+        return this.currentLife;
     
     }
 

@@ -1,7 +1,7 @@
 var LEVELS = LEVELS || {};
 LEVELS.levels = class {
 
-    constructor(){
+    constructor() {
 
         this.currentLevel = 1;
         this.maxLevel = 9;
@@ -20,6 +20,10 @@ LEVELS.levels = class {
     resetLevel() {
 
         this.currentLevel = 1;
+    }
+
+    checkCurrentLevel() {
+        return this.currentLevel;
     }
 
     checkMaxLevel() {

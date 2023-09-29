@@ -1,6 +1,6 @@
-import { LEVELS } from './levels';
-import { WORDS } from "./words";
-import { PLAYER } from "./player";
+import { LEVELS } from './levels.js';
+import { WORDS } from "./words.js";
+import { PLAYER } from "./player.js";
 
 var GAME = GAME || {};
 GAME.game = class {
@@ -8,7 +8,7 @@ GAME.game = class {
     constructor () {
 
         this.player = new PLAYER.player;
-        this.level = new LEVELS.level;
+        this.level = new LEVELS.levels;
         this.words = new WORDS.words;
 
     }
@@ -41,5 +41,6 @@ GAME.game = class {
 
     }
 
-
 }
+
+export { GAME };
