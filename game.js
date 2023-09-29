@@ -8,7 +8,7 @@ GAME.player = new Player();
 
 GAME.game = class Game{
     constructor(){
-        this.randomNumer = Math.floor(Math.random() * 11);
+        this.randomNumber = Math.floor(Math.random() * 11);
     }
     checkWord(userWord){
         if(GAME.player.life > 0){

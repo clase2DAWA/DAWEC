@@ -7,6 +7,7 @@ PLAYER.player = class Player{
     checkLife(){
         this.life--;
     }
+
 };
 
 export default PLAYER.player;
