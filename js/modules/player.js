@@ -19,4 +19,4 @@ PLAYER.player = class player {
     }
 }
 
-export{PLAYER};
+export { PLAYER };

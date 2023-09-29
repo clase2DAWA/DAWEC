@@ -12,13 +12,13 @@ WORDS.words = class words {
             "TARJETA",
             "CAMARA",
             "CABLES",
-            "PLACA BASE",
+            "PLACA",
             "VENTILADORES"
         ];
         //Obtenemos un apalabra aleatoria
         this.palabraAleatoria = this.palabras[Math.floor(Math.random() * this.palabras.length)];
     }
-    
+
     //Método para sacar una palabra aleatoria
     obtenerPalabraAleatoria() {
         return this.palabraAleatoria;
@@ -31,4 +31,4 @@ WORDS.words = class words {
 
 }
 
-export{WORDS};
+export { WORDS };
