@@ -1,7 +1,6 @@
 let PLAYER = {};
 PLAYER.player = class Jugador {
-  constructor(nombre) {
-    this.nombre = nombre;
+  constructor() {
     this.vidas = 9;
   }
 
