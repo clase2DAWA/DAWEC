@@ -8,11 +8,16 @@
 </head>
 
 <body>
-    <h1>VAMOS A JUAGAR AL AHORCADO :)</h1>
+    <h1>VAMOS A JUGAR AL AHORCADO</h1>
     <input id="letra" type="text" maxlength="1" onkeyup="this.value = this.value.toUpperCase();">
-    <button>Comprueba letra</button>
+    <button id="comprobar">Comprueba letra</button>
+    <p id="frase"></p>
+    <h2 id="palabra"></h2>
+    <p id="intentos">Intentos restantes: 6</p>
+    <p id="letras-usadas">Letras usadas:</p>
+    <button id="reiniciar">Reiniciar Juego</button>
 
-    <script src="main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
