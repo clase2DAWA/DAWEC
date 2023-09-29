@@ -12,11 +12,8 @@
                                        con la palabra aleatoria que el jugador tendría que adivinar y además un
                                        jugador que sería quien tendría que adivinar la palabra. Además tendría
                                        un método el cual serviría de cequeo de la palabra del jugador.
-                        1º Problema: ¿dónde debería ir la palabra random generada?¿En la clase Player o en la clase
-                                      Game?
-                                      Se genera en la clase Word, ya que el jugador y la palabra aleatoria no tienen
-                                      nada que ver, no necesitan una de la otra, por tanto van por separado.
-                        2º Problema: Uncaught SyntaxError: ambiguous indirect export: Player. 
+
+                        1º Problema: Uncaught SyntaxError: ambiguous indirect export: Player. 
                                      Implementando el juego como lo pensé de primeras, me surgía este error, el cual 
                                      intentaré arreglar planteando el juego de diferente manera.
 
@@ -30,5 +27,14 @@
                                                       Además de crear un método que verifique si una letra está en la 
                                                       palabra generada aleatoriamente.
                                         + Clase Player: por ahora pienso que está bien pensada, que no le falta nada más.
+                                                      Revisando la clase, debería introducir un método que chequeara si
+                                                      la letra introducida por el jugador está en la palabra misteriosa.
                                         + Clase Game: está pensada si el jugador introduciese palabras enteras y no solo 
                                                       letras.
+
+                                       1º Problema: Uncaught SyntaxError: ambiguous indirect export: Player.
+                                                    Solución: quitar los espacios de nombres.
+                                       2º Problema: Solo me deja 1 intento y no compara la palabra que yo introduzco con
+                                                    la palabra aleatoria generada.
+                                                    Solución: fui revisando el código y me dí cuenta que mezclaba el español 
+                                                              con el inglés entonces no reconocia variables y algunas funciones.
