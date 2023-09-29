@@ -19,11 +19,8 @@ disClue.innerHTML = partida.word.pista;
 disLive.innerHTML += partida.player.vidas;
 
 // Tests
-console.log(partida.contains("a"));
 
 checkBtn.onclick = function () {
-  // Comprobar el intento
-
-  // Actualizar salidas
+  // Comprobar el intento y Actualizar salidas
   disWord.innerHTML = partida.checkTry(letterIn.value);
 };
