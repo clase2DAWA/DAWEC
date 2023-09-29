@@ -2,32 +2,36 @@ var PLAYER = PLAYER || {} ;
 PLAYER.player = class {
 
     constructor() {
-
         this.startLife = 5;
         this.currentLife = 5;
+        this.dead = false;
+    }
+
+    checkLife() {
+        return this.currentLife;
 
     }
 
-    gainLife() {
+    checkDead() {
+        return this.checkLife() <= 0
+    }
 
+    gainLife() {
         return this.checkLife() <=4
         ? this.CurrentLife++
         : "You are full health";
 
     }
 
-    checkLife() {
-        
-        return this.currentLife;
-    
+    loseLife(){
+        return this.checkLife() >0
+        ? this.CurrentLife--
+        : this.dead = true;
     }
 
-    dead() {
-
-        return this.checkLife() <= 0
-
+    restartLife(){
+        this.currentLife = 5;
     }
-
 }
 
 

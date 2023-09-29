@@ -13,6 +13,11 @@ GAME.game = class {
 
     }
 
+    nextLevel() {
+
+        return this.level.nextLevel();
+    }
+
     play() {
         
 
@@ -20,8 +25,8 @@ GAME.game = class {
 
     restartGame() {
 
-        return this.level.restartGame();
-
+        this.level.restartLevel();
+        this.words.createWord();
     }
 
     win() {
@@ -35,11 +40,7 @@ GAME.game = class {
 
     }
 
-    nextLevel() {
 
-        return this.level.nextLevel();
-
-    }
 
 }
 

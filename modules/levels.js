@@ -10,19 +10,8 @@ LEVELS.levels = class {
 
     }
 
-    nextLevel() {
-        
-        if (this.checkMaxLevel()){
-            this.currentLevel++;
-        }     
-    }
-
-    resetLevel() {
-
-        this.currentLevel = 1;
-    }
-
     checkCurrentLevel() {
+        
         return this.currentLevel;
     }
 
@@ -31,6 +20,17 @@ LEVELS.levels = class {
         return this.currentLevel >= this.maxLevel;
     }
 
+    nextLevel() {
+        
+        if (this.checkMaxLevel()){
+            this.currentLevel++;
+        }     
+    }
+
+    restartLevel() {
+
+        this.currentLevel = 1;
+    }
 }
 
 export { LEVELS };
