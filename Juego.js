@@ -1,2 +1,12 @@
-import { jugador } from "./jugador";
-import { palabra } from "./palabra";
+import { jugador} from "./jugador.js";
+import { palabra } from "./palabra.js";
+
+    
+class Game {
+        
+    constructor (){
+        
+    }
+    
+
+}
