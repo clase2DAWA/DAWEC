@@ -4,6 +4,10 @@ import { PLAYER } from "./Jugador.js";
 let GAME = {};
 GAME.game = class Juego {
   constructor(playerName) {
+    // Constantes
+    this.ERROR = "Esa letra no esta en esta palabra";
+
+    // Atributos
     this.player = new PLAYER.player(playerName);
     this.word = new PALABRA.palabra();
     this.arrWord = this.word.palabra.split("");
@@ -11,24 +15,30 @@ GAME.game = class Juego {
   }
 
   checkTry(letter) {
+    let result = false;
     if (this.contains(letter)) {
-      this.showLetter(letter);
+      this.addLetter(letter);
+      result = true;
     }
-    return this.hideWord.join("");
+    return result;
   }
 
   hidesWord() {
     for (let i = 0; i < this.arrWord.length; i++) {
       this.hideWord[i] = "-";
     }
+  }
+
+  // Devuelve la palabra que se esta descubriendo en proceso
+  showHideWord() {
     return this.hideWord.join("");
   }
 
   // En el hideword voy mostrando letra por letra lo que se vaya acertando
-  showLetter(letter) {
+  addLetter(letter) {
     for (let i = 0; i < this.hideWord.length; i++) {
-      if (this.arrWord[i] == letter) {
-        this.hideWord[i] = letter;
+      if (this.arrWord[i] == letter.toLowerCase()) {
+        this.hideWord[i] = letter.toLowerCase();
       }
     }
   }
@@ -37,11 +47,22 @@ GAME.game = class Juego {
   contains(letra) {
     let contain = false;
     for (let i = 0; i < this.arrWord.length; i++) {
-      if (this.arrWord[i] == letra) {
+      if (this.arrWord[i] == letra.toLowerCase()) {
         contain = true;
       }
     }
     return contain;
+  }
+
+  // Comprobar si la palabra esta completa
+  acerted() {
+    let acerted = true;
+    for (let i = 0; i < this.hideWord.length; i++) {
+      if (this.hideWord[i] == "-") {
+        acerted = false;
+      }
+    }
+    return acerted;
   }
 };
 
