@@ -27,7 +27,7 @@ PALABRA.palabra = class Palabra {
    * @returns String con una palabra dependiendo del numero aleatorio
    */
   newPalabra() {
-    this.aleatorio = generaNum();
+    this.aleatorio = this.generaNum();
     this.setPalabra();
     this.setPista();
     this.setLongitudPalabra();
@@ -45,14 +45,14 @@ PALABRA.palabra = class Palabra {
    * Establece el valor de la pista
    */
   setPista() {
-    this.pista = palabras[this.aleatorio].pista;
+    this.pista = this.palabras[this.aleatorio].pista;
   }
 
   /**
    * Setea el valor de la palabra
    */
   setPalabra() {
-    this.palabra = palabras[this.aleatorio].palabra;
+    this.palabra = this.palabras[this.aleatorio].palabra;
   }
 
   /**
