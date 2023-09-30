@@ -12,6 +12,7 @@ GAME.game = class Juego {
     this.word = new PALABRA.palabra();
     this.arrWord = this.word.palabra.split("");
     this.hideWord = new Array();
+    this.lettersTyped = new Array();
   }
 
   checkTry(letter) {
@@ -71,6 +72,16 @@ GAME.game = class Juego {
     this.player = new PLAYER.player();
     this.arrWord = this.word.palabra.split("");
     this.hidesWord();
+  }
+
+  // Letters typed
+  showLettersTyped(letter) {
+    let result = "Ya has usado las letras: ";
+    if (!this.lettersTyped.includes(letter)) {
+      this.lettersTyped.push(letter);
+    }
+    result += this.lettersTyped.toString();
+    return result;
   }
 };
 
