@@ -2,7 +2,7 @@ import { Palabra } from "./palabra";
 import { jugador } from "./jugador";
 
 
-class Juego{
+export class Juego{
 
     constructor(palabra) {
         this.guionesBajos = [];
@@ -46,4 +46,3 @@ class Juego{
     }
 }
 
-export{Juego};
