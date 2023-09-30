@@ -13,12 +13,8 @@ function comprobarLetra() {
     } else {
         if (resultado === "victoria") {
             document.getElementById('frase').innerText = '¡Has ganado!';
-            juego.reiniciarJuego();
-            actualizarInterfaz();
         } else if (resultado === "derrota") {
             document.getElementById('frase').innerText = '¡Has perdido! La palabra era: ' + juego.palabra.obtenerPalabraAleatoria();
-            juego.reiniciarJuego();
-            actualizarInterfaz();
         } else if (resultado) {
             document.getElementById('frase').innerText = '¡Buena elección!';
         } else {
