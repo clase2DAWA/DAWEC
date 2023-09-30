@@ -3,17 +3,23 @@ import { Palabra } from "./palabra.js"
 
 class Juego {
     constructor() {
-
+        this.RECUPERADATOS= {
+                    
+                    letra:document.getElementById("letra"),
+                    palabra:document.getElementById("palabra"),
+                    victoria:document.getElementById("victoria")
+                };
         this.palabra= new Palabra();
         this.dibujaPalabraInicial();
-        //this.jugador1= new Jugador();
+       
+        
 
     }
 
 
     obtenerLetra() {
         
-        return document.getElementById("letra").value;
+        return this.RECUPERADATOS.letra.value;
 
     }
     
@@ -30,8 +36,10 @@ class Juego {
     }
 
     dibujarPalabra(letra) {
+
+
         
-        var palabraUsuario=document.getElementById("palabra").textContent.replaceAll(" ","");
+        var palabraUsuario=this.RECUPERADATOS.palabra.textContent.replaceAll(" ","");
         var palabraSeparada= this.palabra.getPalabra().split("");
         var pProvisional=palabraUsuario.split("");
         
@@ -43,7 +51,7 @@ class Juego {
         }
         
         palabraUsuario=pProvisional.join(" ");
-        document.getElementById("palabra").textContent=palabraUsuario;      
+        this.RECUPERADATOS.palabra.textContent=palabraUsuario;      
     }
 
     
@@ -56,8 +64,10 @@ class Juego {
         for(var i=0; i<largoPalabra;i++){
             palabraInicial+= "_ ";
             
-        }
-        document.getElementById("palabra").textContent=palabraInicial;
+        } console.log(this.RECUPERADATOS.letra)
+        console.log(this.RECUPERADATOS.palabra);
+       
+       this.RECUPERADATOS.palabra.textContent=palabraInicial;
     }
 
 
@@ -65,10 +75,10 @@ class Juego {
     ganar(jugador){
         var victoria=0;
         if(jugador.getVidas()==-1){
-            document.getElementById("victoria").textContent="Has perdido";
+            this.RECUPERADATOS.victoria.textContent="Has perdido";
             victoria=-1;
         }else if(this.palabraCompleta()){
-            document.getElementById("victoria").textContent="Has Ganado";
+            this.RECUPERADATOS.victoria.textContent="Has Ganado";
             victoria=1;
         }
 
@@ -77,7 +87,7 @@ class Juego {
     }
 
     palabraCompleta(){
-        var palabraUsuario= document.getElementById("palabra").textContent;
+        var palabraUsuario= this.RECUPERADATOS.palabra.textContent;
 
         return !palabraUsuario.includes("_");
     }

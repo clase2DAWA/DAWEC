@@ -1,5 +1,6 @@
-import { Juego } from "./juego.js";
-import { Jugador } from "./jugador.js";
+import { Juego } from "./modules/juego.js";
+import { Jugador } from "./modules/jugador.js";
+
 
 
 
@@ -17,7 +18,6 @@ jugador.dibujaVida();
 function volverJugar(){
     juego=new Juego();
     jugador = new Jugador();
-
     jugador.dibujaVida();
 }
 
@@ -38,7 +38,7 @@ function partida(){
     
 
 
-}
+}   
 
 document.getElementById("enviar").addEventListener("click", partida);
 document.getElementById("volverJugar").addEventListener("click", volverJugar);
