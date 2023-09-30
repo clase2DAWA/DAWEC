@@ -21,7 +21,16 @@ a:hover{
     border-radius: 0.35rem;
 }
 
+.backImg{
+
+    background-image: url('/img/ex1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .bc-1 { background-color: #d4d2db; }
+.bc-2 { background-color: #a19fa8; }
+.bc-grey { background-color: #292F3B; }
 .bc-foo { background-color: #515151; }
 
 .backNeui {
@@ -81,7 +90,7 @@ a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-self: center;
+    
 }
 
 footer { text-align: right; }
@@ -90,7 +99,7 @@ footer { text-align: right; }
 
     display: flex;
     flex-direction: row;
-    height: 93vh;
+    height: 61.5vh;
 }
 
 .h20{ height: 55%; }
@@ -119,16 +128,19 @@ footer { text-align: right; }
 .m2bot { margin-bottom: 2rem; }
 .m2top { margin-top: 2rem ; }
 .m2left { margin-left: 2rem; }
-#mainImg { width: 80vh;}
+.m4left { margin-left: 4rem; }
+.m2right { margin-right: 2rem; }
+.m4right { margin-right: 4rem; }
+#mainImg { width: 50vh; }
+#right { row-gap: 4rem; }
 .p1 { padding: 1rem; }
 .p1bot { padding-bottom: 1rem; }
 .ta { text-align: center; }
 
 #title {
     
-    font-size: 6rem;
-    background: #19802a;
-    background: radial-gradient(circle farthest-corner at center center, #888473 10%, #c0741d 100%);
+    font-size: 8rem;
+    background: radial-gradient(circle farthest-corner at center center, #d2290a 10%, #8dab5b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight:800; 
@@ -156,7 +168,7 @@ footer { text-align: right; }
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    column-gap: 10rem;
+    column-gap: 7rem;
 }
 
 .word-display {
