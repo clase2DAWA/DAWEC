@@ -1,94 +1,116 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+
 * {
     text-align: center;
     margin: 0;
-}
+    font-family: Montserrat;
+    font-weight: 350;
 
-p{
-    font-size: 10em;
-}
-
-html,body{
-    height: 100%;
 }
 
 img {
-    width: 815px;
+    width: 70vh;
     height: auto;
 }
 
+html,body {
+    height: 100%;
+}
 
-.contenedor{
+p {
+    font-size: 5em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.vidas h1:last-child{
+    color: crimson;
+}
+
+.crono h1:last-child{
+    color: green;
+}
+
+.contenedor {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: solid 2px black;
 }
 
 .cabecera {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-    border: 2px solid red;
+    flex: .5;
+    padding: 0 15px;
 }
 
-.botonReset{
-    width: 50px;
+.cabecera>div:first-child,
+.cabecera>div:last-child {
+    flex: .1;
+
+}
+
+.botonReset {
+    width: 30px;
     height: auto;
 }
 
-.titulo{
-    border: 2px solid grey;
+.titulo {
     display: flex;
-    flex: 1;
-}
-.reset{
-    border: 2px solid crimson;
-    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
 }
 
-.interfaz{
-    border: 2px solid purple ;
+.reset {
+    display: flex;
+    justify-content: end;
+    flex: 1;
+
+}
+
+.interfaz {
     display: flex;
     flex: 1;
 }
 
 .dibujo {
-    border: 2px solid blue;
     flex: 1;
 }
-.info{
-    border: 2px solid lawngreen;
+
+.info {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.palabra{
-    border: 2px solid orange;
+.palabra {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 10%;
     flex: 1;
-
 }
 
-.datos{
-    border: 2px solid violet;
+.datos {
     display: flex;
     flex: 1;
 }
-.vidas{
-    border: 2px solid black;
+
+.vidas {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
     flex-direction: column;
 }
-.crono{
-    border: 2px solid brown;
+
+.crono {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,15 +119,23 @@ img {
 }
 
 .teclado {
-    border: 2px solid green;
     flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 5px;
 }
 
-.boton{
-    margin-top: 15px;
-    margin-right: 5px;
-    width: 200px; /* Ancho del botón en píxeles */
-    height: 50px; /* Alto del botón en píxeles */
-    font-size: 18px; /* Tamaño de la fuente del texto del botón */
-}
+.boton {
+    width: 100px;
+    /* Ancho del botón en píxeles */
+    height: 40px;
+    /* Alto del botón en píxeles */
+    font-size: 18px;
+    /* Tamaño de la fuente del texto del botón */
 
+}
