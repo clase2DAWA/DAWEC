@@ -24,7 +24,9 @@ GAME.game = class game {
                         this.palabraAdivinada = this.palabraAdivinada.substr(0, i * 2) + letra + this.palabraAdivinada.substr(i * 2 + 1);
                     }
                 }
-                if (this.palabraAdivinada.split('').join(' ') === palabraAleatoria.split('').join(' ')) {
+                console.log(this.palabraAdivinada);
+                console.log(this.palabraAleatoria);
+                if (this.palabraAdivinada.trim() === palabraAleatoria.trim()) {
                     return "victoria";
                 } else {
                     return true;
