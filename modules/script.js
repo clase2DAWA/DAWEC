@@ -60,7 +60,7 @@ function showLetter() {
 
 function showMessage() {
 
-    MESSAGEBOX.innerHTML = NEWGAME.checkMessage();
+    MESSAGEBOX.innerHTML = NEWGAME.words.checkMessage();
 }
 
 function checkCurrentLevel() {

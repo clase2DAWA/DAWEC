@@ -2,7 +2,7 @@ var PLAYER = PLAYER || {} ;
 PLAYER.player = class {
 
     constructor() {
-        
+
         this.startLife = 5;
         this.currentLife = 5;
         this.dead = false;
@@ -23,7 +23,7 @@ PLAYER.player = class {
 
         return this.checkLife() <=4
         ? this.CurrentLife++
-        : "You are full health";
+        : undefined;
     }
 
     loseLife() {
