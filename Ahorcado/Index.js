@@ -1,12 +1,11 @@
-import { Word } from "Word.js";
+import { Word } from "/modules/Word.js";
 
-let size = 5;
+//let word = returnWord();
+let word = "adios";
 let ini = "";
-for (var i = 0; i < size; i++) {
+for (var i = 0; i < word.length; i++) {
     ini = ini + "_ ";
 }
-
-const palabra = new Word();
 
 document.getElementById("check").onclick = function palabra() {
     document.getElementById("word").innerHTML = ini
