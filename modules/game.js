@@ -1,20 +1,26 @@
-let GAME = {};
+import { Word } from "./modules/word.js";
+import { Player } from "./modules/player.js";
 
-GAME.game = class {
-    
-    constructor(word) {
-        this.underscores = [];
-        this.arrWord = word;
+class Game {
+
+    constructor() {
+
+        this.playerName = prompt("Enter your user name.");
+        this.player = new Player(this.playerName);
+        this.word = new Word().word();
+        this.arrLetter = this.word.split('');
+        this.arrUnderscores = underscores();
+        this.arrOcurrences = this.ocurrences();
     }
 
-    checkLetter(letter, word) {
-        contain = false;
-        if (word.indexOf(letter) != -1) {
-            contain = true;
+    showLetter(letter) {
+        for (let i = 0; i < this.arrLetter.length; i++) {
+            letterUser = letter;
+            indice = arrOcurrences[i];
+            underscores[indice] = letterUser;
         }
-        return contain;
     }
-    ocurrences(letter, word) {
+    ocurrences(letter) {
         letters = [];
         position = word.indexOf(letter);
         while (position != -1) {
@@ -23,20 +29,10 @@ GAME.game = class {
         }
         return letters;
     }
-    showUnderscores(word){
-       for (let i = 0; i < word.length; i++) {
-            this.underscores.push("_");
-        } 
-        return this.underscores;
-    }
-    showLetter(letter, word) {
-
-        for (let i = 0; i < this.underscores.length; i++) {
-            let index = word[i];
-            this.underscores[value] = letter;
+    underscores() {
+        for (let i = 0; i < this.word.length; i++) {
+            this.arrUnderscores.push("_");
         }
-        return this.underscores;
     }
-
-}
-export {GAME};
+};
+export {Game};
