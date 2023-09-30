@@ -10,6 +10,7 @@ let alimentacion = document.getElementById("retroAlimentacion");
 let askNewGame = document.getElementById("newGame");
 let noBtn = document.getElementById("no");
 let yesBtn = document.getElementById("yes");
+let disLettersTyped = document.getElementById("lettersTyped");
 
 // Juego
 let partida = new GAME.game();
@@ -35,9 +36,13 @@ checkBtn.onclick = function () {
     disLive.innerHTML = "Tus vidas: " + partida.player.restarVida();
     if (partida.player.vidas < 1) {
       alimentacion.innerHTML = "HAS PERDIDO PISHA";
+      disWord.innerHTML = partida.word.palabra;
       askForLeave();
     }
   }
+  disLettersTyped.innerHTML = partida.showLettersTyped(
+    letterIn.value.toLowerCase()
+  );
 };
 
 letterIn.onfocus = function () {
