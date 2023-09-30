@@ -24,9 +24,11 @@ GAME.game = class game {
                         this.palabraAdivinada = this.palabraAdivinada.substr(0, i * 2) + letra + this.palabraAdivinada.substr(i * 2 + 1);
                     }
                 }
-                console.log(this.palabraAdivinada);
-                console.log(this.palabraAleatoria);
-                if (this.palabraAdivinada.trim() === palabraAleatoria.trim()) {
+                if (this.palabraAdivinada.replace(/\s+/g, '') === palabraAleatoria) {
+                    const win = document.getElementById('comprobar');
+                    const input = document.getElementById('letra');
+                    win.disabled = true;
+                    input.disabled = true;
                     return "victoria";
                 } else {
                     return true;
@@ -34,6 +36,10 @@ GAME.game = class game {
             } else {
                 this.jugador.quitarIntento();
                 if (this.jugador.getIntentosRestantes() <= 0) {
+                    const lose = document.getElementById('comprobar');
+                    const input = document.getElementById('letra');
+                    lose.disabled = true;
+                    input.disabled = true;
                     return "derrota";
                 }
                 return false;
