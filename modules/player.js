@@ -8,3 +8,4 @@ class Player {
         return this.lives--;
     };
 };
+export {Player};

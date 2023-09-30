@@ -1,35 +1,21 @@
 import { Word } from "./modules/word.js";
-let palabra = new Word();
-let manzana = "manzana";
-console.log(manzana.indexOf("z"));
+import { GAME } from "./modules/game.js";
+import { Player } from "./modules/player.js";
 
-let letters = [];
-let position = manzana.indexOf("a");
 
-while (position != -1) {
-    letters.push(position);
-    position = manzana.indexOf("a", position + 1);
+//let name = prompt("Enter your user-name.");
+let player = new Player(name);
+let word = new Word().word();
+let game = new GAME.game(word.split(''));
+
+document.getElementById("lives").innerHTML = player.lives;
+document.getElementById("word").innerHTML = game.showUnderscores(word);
+document.getElementById("submit").addEventListener("click",submitLetter());
+console.log(name);
+console.log(word);
+
+function submitLetter(){
+    let letter = document.getElementById("submit").value;
+    document.getElementById("word").innerHTML = game.showLetter(letter, word);
 }
-console.log(letters);
-
-let underscores = [];
-for (let i = 0; i < manzana.length; i++) {
-    underscores.push("_");
-
-}
-
-for (let i = 0; i < letters.length; i++) {
-    let letra = "a";
-    let indice = letters[i];
-    underscores[indice] = letra;
-
-}
-console.log(underscores);
-
-
-
-
-
-/*let palabras = ["pera", "banana", "platano"];
-let p1 = palabras[Math.floor(Math.random()*palabras.length)];
-console.log(p1);*/
+console.log(word.split(''));

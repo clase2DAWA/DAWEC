@@ -1,7 +1,10 @@
-class game {
-    
-    constructor() {
+let GAME = {};
 
+GAME.game = class {
+    
+    constructor(word) {
+        this.underscores = [];
+        this.arrWord = word;
     }
 
     checkLetter(letter, word) {
@@ -20,17 +23,20 @@ class game {
         }
         return letters;
     }
-    showLetter(letters, letter, word) {
-        
-        for (let i = 0; i < word.length; i++) {
-            underscores.push("_");
+    showUnderscores(word){
+       for (let i = 0; i < word.length; i++) {
+            this.underscores.push("_");
+        } 
+        return this.underscores;
+    }
+    showLetter(letter, word) {
+
+        for (let i = 0; i < this.underscores.length; i++) {
+            let index = word[i];
+            this.underscores[value] = letter;
         }
-        for (let i = 0; i < letters.length; i++) {
-            letra = letter;
-            indice = letters[i];
-            underscores[indice] = letra;
-        }
-        return underscores;
+        return this.underscores;
     }
 
 }
+export {GAME};
