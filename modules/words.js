@@ -11,16 +11,24 @@ WORDS.words = class {
         this.underScore = this.createUnderscore();
         this.found = false;
         this.miss = 0;
+        this.msg = "";
+        this.completedWord = false;
+        
     }
 
     createUnderscore() {
 
-        let underScore ="";
+        let startUnderScore ="";
 
         for (let i = 0; i < this.currentWord.length; i++) {
-            underScore += "_ ";
+            startUnderScore += "_ ";
         }
-        return underScore;
+        return startUnderScore;
+    }
+
+    checkUnderScore () {
+        
+        return this.underScore;
     }
 
     createWord() {
@@ -28,6 +36,12 @@ WORDS.words = class {
         this.selectGroupLetter();
         this.generateWord();
         this.createUnderscore();
+    }
+
+    checkCompletedWord() {
+
+        this.completedWord = this.checkUnderScore() === this.checkCurrentWord ? true : false;
+        this.msg = this.completedWord ? "You have completed the word" : "";
     }
 
     checkCurrentWord() {
@@ -40,9 +54,12 @@ WORDS.words = class {
     }
 
     checkFound(letter) {
-        return this.found
-        ? "Good! You found "+ letter+ "letter"
-        : missedLetter();
+        
+        if (this.found){
+            this.letterFound(letter)
+        } else {
+            this.missedLetter()
+        }
     }
 
 
@@ -57,25 +74,30 @@ WORDS.words = class {
                 this.found = true;
             }     
         }
-        checkFound(letter);
+        this.checkFound(letter);
+    }
+
+    letterFound(letter) {
+        
+        console.log(this.msg);
+        this.msg = "Good! You have found '"+ letter+ "' letter"
+        this.checkCompletedWord();
+
     }
 
     missedLetter() {
 
         this.miss += 1
-        return "You missed the letter";
+        this.msg= "You missed! One life gone";
     }
 
     replaceLetter(position,letter){
 
-        return this.underScore.replace(this.underScore[position], letter);
+        let updateWord = this.underScore.split('');
+        updateWord[position+position] = letter;
+        return updateWord.join('');
+        
     }
-
-    /*compareReveal(){
-        return this.compareLetter(letter)
-        ? this.reveal()
-        : 
-    }*/
 
     generateWord() {
 

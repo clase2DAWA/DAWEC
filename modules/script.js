@@ -8,6 +8,7 @@ const WORD = document.getElementById("word");
 const TRYWORD = document.getElementById('tryWord');
 const WORDDISPLAY= document.getElementById('word-display');
 const RESTART = document.getElementById('restart');
+const MESSAGEBOX = document.getElementById('word-message')
 
 
 STARTNEWGAME.addEventListener('click', () => {
@@ -19,10 +20,16 @@ STARTNEWGAME.addEventListener('click', () => {
     
     TRYWORD.addEventListener('click', () => {
 
-        NEWGAME.words.compareLetter(WORD.innerHTML);
+        let var1 = WORD.value;
+        NEWGAME.words.compareLetter(var1);
+        showLetter();
+        showMessage();
+
 
         if (NEWGAME.player.checkDead()){
-            NEWGAME.lose();
+            MESSAGEBOX.innerHTML = NEWGAME.lose();
+            showLetter();
+            showMessage();
         }
         
         
@@ -37,6 +44,13 @@ STARTNEWGAME.addEventListener('click', () => {
 
 });
 
+function showLetter() {
+    WORDDISPLAY.innerHTML = NEWGAME.words.checkUnderScore();
+}
+
+function showMessage() {
+    MESSAGEBOX.innerHTML = NEWGAME.words.msg;
+}
 
 
 
