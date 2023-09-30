@@ -1,11 +1,15 @@
+
 export class jugador {
       constructor(){
-        health=8;
+        this.health=8;
+        this.vivo=true;
       }
+     
       herir(){
-        health-1;
-        if (health==0) {
-            return "DEAD";
+        this.health=-1;
+        if (this.health==0) {
+            this.vivo=false;
+            return vivo;
         }
       }
 }
