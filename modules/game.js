@@ -4,35 +4,26 @@ import { Player } from "./player.js";
 class Game {
 
     constructor() {
-
-        // this.playerName = prompt("Enter your user name.");
-        this.player = new Player(this.playerName);
+        this.name = "vito";
         this.word = new Word().word();
-        this.arrLetter = this.word.split('');
-    }
-
-    showLetter(letter) {
-        for (let i = 0; i < this.arrLetter.length; i++) {
-            let letterUser = letter;
-            let indice = this.arrOcurrences[i];
-            this.arrUnderscores[indice] = letterUser;
-        }
-    }
-    underscores(){  
-        let underscores = [];  
-            for (let i = 0; i < this.word.length; i++) {
-                underscores.push("_");
-            }  
-            return underscores;
-    }
+        this.player = new Player(name);
+        this.arrWord = this.word.split('');
+        this.secretWord = this.word
+        this.arrUndercores = [];
+        this.arrLetters = [];
+    };
+    undercores(){
+        for (let i = 0; i < this.word.length; i++) {
+            this.arrUndercores.push("_");
+        } 
+    };
     ocurrences(letter) {
-        let letters = [];
         let position = this.word.indexOf(letter);
         while (position != -1) {
-            letters.push(position);
-            position = word.indexOf(letter, position + 1);
+            this.arrLetters.push(position);
+            position = this.word.indexOf(letter, position + 1);
         }
-        return letters;
-    }
+    };
+
 };
 export { Game };
