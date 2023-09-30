@@ -1,5 +1,3 @@
-import { PLAYER } from "./player.js";
-
 var WORDS = WORDS || {};
 WORDS.words = class {
 
@@ -10,10 +8,9 @@ WORDS.words = class {
         this.unlockedWord ="";
         this.underScore = this.createUnderscore();
         this.found = false;
-        this.miss = 0;
+        this.miss = false;
         this.msg = "";
-        this.completedWord = false;
-        
+        this.completedWord = false;    
     }
 
     createUnderscore() {
@@ -36,12 +33,18 @@ WORDS.words = class {
         this.selectGroupLetter();
         this.generateWord();
         this.createUnderscore();
+        this.completedWord = false;
     }
 
     checkCompletedWord() {
 
-        this.completedWord = this.checkUnderScore() === this.checkCurrentWord ? true : false;
-        this.msg = this.completedWord ? "You have completed the word" : "";
+        let removeSpaces = this.underScore.split(' ').join('');
+
+        if (removeSpaces == this.checkCurrentWord()) {
+            this.completedWord = true;
+            return true;
+        }
+        return false
     }
 
     checkCurrentWord() {
@@ -49,7 +52,13 @@ WORDS.words = class {
         return this.currentWord;
     }
 
+    checkMessage() {
+
+        return this.msg;
+    }
+
     checkMiss() {
+
         return this.miss;
     }
 
@@ -62,11 +71,11 @@ WORDS.words = class {
         }
     }
 
-
     compareLetter(letter){
 
         let correctedLetter = letter.toLowerCase().trim();
         this.found = false;
+        this.miss = false;
 
         for (let i = 0; i < this.currentWord.length; i++) {
             if (correctedLetter == this.currentWord[i]){
@@ -79,16 +88,17 @@ WORDS.words = class {
 
     letterFound(letter) {
         
-        console.log(this.msg);
-        this.msg = "Good! You have found '"+ letter+ "' letter"
-        this.checkCompletedWord();
-
+        this.checkCompletedWord()
+        ? this.msg = "You have completed the word"
+        : this.msg = "Good! You have found '"+ letter.toUpperCase() + "' letter";
+        this.checkMessage();
     }
 
     missedLetter() {
 
-        this.miss += 1
+        this.miss = true;
         this.msg= "You missed! One life gone";
+        this.checkMessage();
     }
 
     replaceLetter(position,letter){
@@ -96,7 +106,6 @@ WORDS.words = class {
         let updateWord = this.underScore.split('');
         updateWord[position+position] = letter;
         return updateWord.join('');
-        
     }
 
     generateWord() {
@@ -123,7 +132,6 @@ WORDS.words = class {
         let wholeLetters = [wordsFourLetters,wordsFiveletters,wordsSixLetters,wordsSevenLetters,wordsEightLetters,wordsNineLetters,wordsTenLetters]
         return wholeLetters[this.randomNumberLetter()];   
     }
-
 }
 
 export { WORDS };

@@ -14,9 +14,10 @@ const MESSAGEBOX = document.getElementById('word-message')
 STARTNEWGAME.addEventListener('click', () => {
 
     NEWGAME.play();
-    CURRENTLIFEPANEL.innerHTML = NEWGAME.player.checkLife();
-    CURRENTLEVEL.innerHTML = NEWGAME.level.checkCurrentLevel();
-    WORDDISPLAY.innerHTML = NEWGAME.words.createUnderscore();
+    checkLife();
+    checkCurrentLevel();
+    createUnderScore();
+    
     
     TRYWORD.addEventListener('click', () => {
 
@@ -25,31 +26,56 @@ STARTNEWGAME.addEventListener('click', () => {
         showLetter();
         showMessage();
 
+        if (NEWGAME.words.miss){
+            NEWGAME.player.loseLife();
+            checkLife();
+        }
 
-        if (NEWGAME.player.checkDead()){
+        if (NEWGAME.player.checkDead()) {
+
             MESSAGEBOX.innerHTML = NEWGAME.lose();
             showLetter();
             showMessage();
         }
-        
-        
-    
+
+        if (NEWGAME.words.completedWord) {
+            
+
+            NEWGAME.nextLevel();
+            checkCurrentLevel();
+            NEWGAME.player.restartLife();
+        }
     });
     
     RESTART.addEventListener('click', () => {
 
         NEWGAME.restartGame();
-    
     });
-
 });
 
 function showLetter() {
+
     WORDDISPLAY.innerHTML = NEWGAME.words.checkUnderScore();
 }
 
 function showMessage() {
-    MESSAGEBOX.innerHTML = NEWGAME.words.msg;
+
+    MESSAGEBOX.innerHTML = NEWGAME.checkMessage();
+}
+
+function checkCurrentLevel() {
+
+    CURRENTLEVEL.innerHTML = NEWGAME.level.checkCurrentLevel();
+}
+
+function checkLife() {
+
+    CURRENTLIFEPANEL.innerHTML = NEWGAME.player.checkLife();
+}
+
+function createUnderScore() {
+
+    WORDDISPLAY.innerHTML = NEWGAME.words.createUnderscore();
 }
 
 

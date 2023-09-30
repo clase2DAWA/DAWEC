@@ -14,13 +14,7 @@ GAME.game = class {
 
     lose() {
 
-        return "You Lost! Are you happy?";
-    }
-
-
-    nextLevel() {
-
-        return this.level.nextLevel();
+        this.words.msg = "You Lost! Are you happy?";
     }
 
     play() {
@@ -31,22 +25,22 @@ GAME.game = class {
 
     }
 
+    nextLevel() {
+        this.words.createWord();
+        this.level.nextLevel();
+    }
+
     restartGame() {
 
         this.level.restartLevel();
         this.words.createWord();
+        this.player.restartLife();
     }
 
     win() {
 
-        return this.level.maxLevel()
-            ? "You have won the game. Are you happy?"
-            : undefined;
+        this.words.msg = "You have won the game. Are you happy?"
     }
-
-
-
-
 }
 
 export { GAME };
