@@ -65,6 +65,11 @@ TRYWORD.addEventListener('click', () => {
     if (NEWGAME.words.completedWord) {
         
         nextLevel();
+        WORD.value ="";
+    }
+
+    if (!NEWGAME.level.checkMaxLevel){
+        NEWGAME.win();
     }
 });
 

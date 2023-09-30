@@ -36,7 +36,6 @@ WORDS.words = class {
         this.miss = false;
         this.msg = "";
         this.completedWord = false; 
-
     }
 
     checkCompletedWord() {

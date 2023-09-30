@@ -5,8 +5,6 @@ LEVELS.levels = class {
 
         this.currentLevel = 1;
         this.maxLevel = 5;
-        this.maxLevelreached = false;
-
     }
 
     checkCurrentLevel() {
@@ -23,10 +21,7 @@ LEVELS.levels = class {
         
         if (this.checkMaxLevel()){
             this.currentLevel++;
-            console.log(this.checkCurrentLevel);
-        } else{
-            this.maxLevelreached = true;
-        }    
+        } 
     }
 
     restartLevel() {
