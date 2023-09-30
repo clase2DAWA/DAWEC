@@ -1,14 +1,13 @@
-import { PALABRA } from "./palabra.js";
-let palabra = new PALABRA.palabra();
 let JUEGO = {};
 JUEGO.juego = class {
-    comprobarPalabra(palabraUsuario) {
-        if (palabraUsuario = palabraEscogida) {
-
+    comprobarPalabra(letraUsuario, palabraEscogida) {
+        if (letraUsuario.length != 1) {
+            
+        }else{
+            if (palabraEscogida.indexOf(letraUsuario) != -1) {
+                
+            }
         }
-    }
-    prueba() {
-        console.log(palabra.seleccionarPalabra());
     }
 }
 
