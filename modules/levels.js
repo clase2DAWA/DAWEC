@@ -6,8 +6,6 @@ LEVELS.levels = class {
         this.currentLevel = 1;
         this.maxLevel = 5;
         this.maxLevelreached = false;
-        this.difficult = ["easy", "normal", "hard"];
-        this.defaultDif = "easy";
 
     }
 
@@ -23,8 +21,9 @@ LEVELS.levels = class {
 
     nextLevel() {
         
-        if (!this.checkMaxLevel()){
+        if (this.checkMaxLevel()){
             this.currentLevel++;
+            console.log(this.checkCurrentLevel);
         } else{
             this.maxLevelreached = true;
         }    
@@ -33,6 +32,7 @@ LEVELS.levels = class {
     restartLevel() {
 
         this.currentLevel = 1;
+        this.maxLevelreached = false;
     }
 }
 

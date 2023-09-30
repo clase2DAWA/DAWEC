@@ -5,7 +5,6 @@ WORDS.words = class {
 
         this.currentGroupWords = this.selectGroupLetter();
         this.currentWord = this.generateWord().toLowerCase();
-        this.unlockedWord ="";
         this.underScore = this.createUnderscore();
         this.found = false;
         this.miss = false;
@@ -30,10 +29,14 @@ WORDS.words = class {
 
     createWord() {
 
-        this.selectGroupLetter();
-        this.generateWord();
-        this.createUnderscore();
-        this.completedWord = false;
+        this.currentGroupWords = this.selectGroupLetter();
+        this.currentWord = this.generateWord().toLowerCase();
+        this.underScore = this.createUnderscore();
+        this.found = false;
+        this.miss = false;
+        this.msg = "";
+        this.completedWord = false; 
+
     }
 
     checkCompletedWord() {
@@ -86,6 +89,12 @@ WORDS.words = class {
         this.checkFound(letter);
     }
 
+    generateWord() {
+
+        let length = this.currentGroupWords.length;
+        return this.currentGroupWords[Math.floor(Math.random() * length )];
+    }
+
     letterFound(letter) {
         
         this.checkCompletedWord()
@@ -101,6 +110,11 @@ WORDS.words = class {
         this.checkMessage();
     }
 
+    randomNumberLetter () {
+
+        return Math.floor(Math.random() * (7));
+    }
+
     replaceLetter(position,letter){
 
         let updateWord = this.underScore.split('');
@@ -108,26 +122,15 @@ WORDS.words = class {
         return updateWord.join('');
     }
 
-    generateWord() {
-
-        let length = this.currentGroupWords.length;
-        return this.currentGroupWords[Math.floor(Math.random() * (length +1))];
-    }
-
-    randomNumberLetter () {
-
-        return Math.floor(Math.random() * (7));
-    }
-
     selectGroupLetter() {
 
         let wordsFourLetters = ["Cama","Casa" ,"Mesa","Duro","Rico","Lago","Rojo","Azul","Vino","Amor","Idea","Piel"]
-        let wordsFiveletters = ["Agua","Perro","Cielo","Fuego","Raton","Suelo","Broma","Juego","Mujer","Joven","Coche","Lapiz","Jugar","Dulce","Reloj","Peine","Largo"]
-        let wordsSixLetters = ["Tomate","Bonito","Pesado","Camisa","Pintor","Pajaro","Camion","Marino","Médico","Lapices","Futuro","Cancion","Altura"];
-        let wordsSevenLetters = ["momento","impacto","estudio","sublime","mensaje","delgado","cliente","negocio","esencia","trabajo","sentido","perdido","ventaja","antiguo"];
-        let wordsEightLetters = ["tristeza","infinito","proyecto","respecto","bastante","objetivo","inocente","elemento","concreto","servicio"];
-        let wordsNineLetters = ["resultado", "confiable", "actividad","respuesta","relevante","excelente","arrogante","recorrido","identidad","bicicleta"];
-        let wordsTenLetters = ["importante","desarrollo","compromiso","comentario","meticuloso","adversidad","relevancia","preocupado","productivo","suficiente","existencia"];
+        let wordsFiveletters = ["Agua","Perro","Cielo","Fuego","Raton","Suelo","Broma","Juego","Mujer","Joven","Coche","Lapiz","Dulce","Reloj","Peine","Largo"]
+        let wordsSixLetters = ["Tomate","Bonito","Pesado","Camisa","Pintor","Pajaro","Camion","Marino","Medico","Futuro","Altura"];
+        let wordsSevenLetters = ["Momento","Impacto","Estudio","Sublime","Mensaje","Delgado","Cliente","Negocio","Esencia","Trabajo","Sentido","Perdido","Ventaja","Antiguo"];
+        let wordsEightLetters = ["Tristeza","Infinito","Proyecto","Respecto","Bastante","Objetivo","Inocente","Elemento","Concreto","Servicio"];
+        let wordsNineLetters = ["Resultado", "Confiable", "Actividad","Respuesta","Relevante","Excelente","Arrogante","Recorrido","Identidad","Bicicleta"];
+        let wordsTenLetters = ["Importante","Desarrollo","Compromiso","Comentario","Meticuloso","Adversidad","Relevancia","Preocupado","Productivo","Suficiente","Existencia"];
 
         let wholeLetters = [wordsFourLetters,wordsFiveletters,wordsSixLetters,wordsSevenLetters,wordsEightLetters,wordsNineLetters,wordsTenLetters]
         return wholeLetters[this.randomNumberLetter()];   

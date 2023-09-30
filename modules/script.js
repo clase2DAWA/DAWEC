@@ -7,60 +7,82 @@ const CURRENTLEVEL = document.getElementById("currentLevel");
 const WORD = document.getElementById("word");
 const TRYWORD = document.getElementById('tryWord');
 const WORDDISPLAY= document.getElementById('word-display');
-const RESTART = document.getElementById('restart');
-const MESSAGEBOX = document.getElementById('word-message')
+const MESSAGEBOX = document.getElementById('word-message');
+const STYLESMSGBOX = document.querySelector('word-messageStyle');
+const DIFFICULTYSELECT = document.getElementById('difficulty');
+const DIFFICULTYDIV = document.getElementById('difficultyDiv')
 
 
 STARTNEWGAME.addEventListener('click', () => {
 
-    NEWGAME.play();
-    checkLife();
-    checkCurrentLevel();
-    createUnderScore();
+    DIFFICULTYDIV.style.display='none';
+    playRestart();
     
-    
-    TRYWORD.addEventListener('click', () => {
+});
 
-        let var1 = WORD.value;
-        NEWGAME.words.compareLetter(var1);
+DIFFICULTYSELECT.addEventListener('change', () => {
+    
+    let selectedOption = DIFFICULTYSELECT.value; 
+    console.log(selectedOption);
+    
+    if (selectedOption == 'easy') {
+
+        NEWGAME.player.startLife = 6;
+
+    } else if (selectedOption == 'normal') {
+
+        NEWGAME.player.startLife = 5;
+
+    } else if (selectedOption == 'hard') {
+
+        NEWGAME.player.startLife = 4;
+    }
+    
+    NEWGAME.player.restartLife();
+    checkLife();
+});
+
+TRYWORD.addEventListener('click', () => {
+
+    NEWGAME.words.compareLetter(WORD.value);
+    showLetter();
+    showMessage();
+
+    if (NEWGAME.words.miss){
+        NEWGAME.player.loseLife();
+        checkLife();
+    }
+
+    if (NEWGAME.player.checkDead()) {
+
+        MESSAGEBOX.innerHTML = NEWGAME.lose();
         showLetter();
         showMessage();
+        TRYWORD.style.display = "none";
+        WORD.style.display = "none";
+    }
 
-        if (NEWGAME.words.miss){
-            NEWGAME.player.loseLife();
-            checkLife();
-        }
-
-        if (NEWGAME.player.checkDead()) {
-
-            MESSAGEBOX.innerHTML = NEWGAME.lose();
-            showLetter();
-            showMessage();
-        }
-
-        if (NEWGAME.words.completedWord) {
-            
-
-            NEWGAME.nextLevel();
-            checkCurrentLevel();
-            NEWGAME.player.restartLife();
-        }
-    });
-    
-    RESTART.addEventListener('click', () => {
-
-        NEWGAME.restartGame();
-    });
+    if (NEWGAME.words.completedWord) {
+        
+        nextLevel();
+    }
 });
 
 function showLetter() {
 
+    
     WORDDISPLAY.innerHTML = NEWGAME.words.checkUnderScore();
 }
 
 function showMessage() {
 
     MESSAGEBOX.innerHTML = NEWGAME.words.checkMessage();
+    MESSAGEBOX.style.cssText = STYLESMSGBOX;    
+}
+
+function clearMessage() {
+
+    MESSAGEBOX.innerHTML = "";
 }
 
 function checkCurrentLevel() {
@@ -78,6 +100,28 @@ function createUnderScore() {
     WORDDISPLAY.innerHTML = NEWGAME.words.createUnderscore();
 }
 
+function nextLevel() {
+
+    NEWGAME.nextLevel();
+    resetInterface();
+}
+
+
+function playRestart() {
+    
+    NEWGAME.playRestartGame();
+    resetInterface();
+}
+
+function resetInterface() {
+
+    checkLife();
+    checkCurrentLevel();
+    createUnderScore();
+    clearMessage();
+    TRYWORD.style.display = "block";
+    WORD.style.display = "block";
+}
 
 
 

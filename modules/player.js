@@ -3,8 +3,8 @@ PLAYER.player = class {
 
     constructor() {
 
-        this.startLife = 5;
-        this.currentLife = 5;
+        this.startLife = 6;
+        this.currentLife = this.startLife;
         this.dead = false;
     }
 
@@ -21,14 +21,14 @@ PLAYER.player = class {
 
     gainLife() {
 
-        return this.checkLife() <=4
+        return this.checkLife() <=this.startLife
         ? this.CurrentLife++
         : undefined;
     }
 
     loseLife() {
         
-        this.currentLife--;
+        this.currentLife --;
 
         if (this.currentLife <= 0){
             this.dead = true;
@@ -36,7 +36,8 @@ PLAYER.player = class {
     }
 
     restartLife() {
-        this.currentLife = 5;
+
+        this.currentLife = this.startLife;
         this.dead = false;
     }
 }

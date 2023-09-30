@@ -35,7 +35,7 @@ a:hover{
 
 .backNeui {
 
-    border-radius: 3rem;
+    border-radius: 2rem;
     background: #d4d2db;
     box-shadow:  10px 10px 29px #b4b3ba,
                 -30px -30px 59px #f4f2fc;
@@ -95,6 +95,16 @@ a:hover{
 
 footer { text-align: right; }
 
+.word-messageStyle {
+
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    color :white;
+    font-size: 2rem; 
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #283966;
+}
+
 #full-content {
 
     display: flex;
@@ -130,6 +140,7 @@ footer { text-align: right; }
 .m2left { margin-left: 2rem; }
 .m4left { margin-left: 4rem; }
 .m2right { margin-right: 2rem; }
+.m4top { margin-top: 4rem; }
 .m4right { margin-right: 4rem; }
 #mainImg { width: 50vh; }
 #right { row-gap: 4rem; }
@@ -180,9 +191,13 @@ footer { text-align: right; }
     font-size:1.55rem;
     text-align: center;  
     border-radius: 0.3rem; 
-    width: 25rem;
+    width: 20rem;
     margin: auto; 
     text-shadow:0px 1px 0px #44464a;
+}
+
+#word-message {
+
 }
 
 .w13 { width: 13%; }

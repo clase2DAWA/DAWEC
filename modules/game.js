@@ -17,23 +17,17 @@ GAME.game = class {
         this.words.msg = "You Lost! Are you happy?";
     }
 
-    play() {
+    playRestartGame() {
         
         this.words.createWord()
         this.level.restartLevel();
         this.player.restartLife();
-
     }
 
     nextLevel() {
+
         this.words.createWord();
         this.level.nextLevel();
-    }
-
-    restartGame() {
-
-        this.level.restartLevel();
-        this.words.createWord();
         this.player.restartLife();
     }
 

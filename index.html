@@ -24,39 +24,34 @@
         </section> --> 
         <h1 id="title">Clever Hangs</h1>
         <div id="full-content" class="">
-            <div class="backNeui m2left p1 flexCol">
-                <div class="flexCol ta ">
-                    <h3 class="ta p1">How to play?</h3>
-                    <div class="">
-                        <h4 class="m1top m1bot m1right">1) Select Difficulty </h4>
+            
+                <div class="flexCol ta m1left">
+                    <div id="difficultyDiv" class="backNeui p1 m2bot">
+                        <h4 class="m1bot m1right">Difficulty </h4>
                         <select class="button m1bot" id="difficulty" name="options">
-                            <option value="easy">Easy</option>
-                            <option value="normal">Normal</option>
-                            <option value="hard">Hard</option>
+                            <option id="easy" value="easy">Easy</option>
+                            <option id="normal" value="normal">Normal</option>
+                            <option id="hard" value="hard">Hard</option>
                         </select>
                     </div>
-                    <div class="">
-                        <h4 class="m1right m1bot">2) Start a Game</h4>
-                        <button class="button m1bot" id="play">Play Game</button>
-                    </div>
-                    <div class="">
-                        <h4 class="m1bot">3)Try again</h4>
-                        <button class="button m1bot" id="restart">Restart</button>
+                    <div class="backNeui p1">
+                        <h4 class="m1right m1bot">Start</h4>
+                        <button class="button m1bot" id="play">New Game</button>
                     </div>
                     
                 </div>
-            </div>
+            
             <div class="centerRight">
                 <div id="center" class="flexCol w100">
                     <div>
-                        <p id="word-message"></p>
+                        <h2 id="word-message" class="word-messageStyle"></h2>
                     </div>
-                    <div class="word-display m2bot " >
+                    <div class="word-display " >
                         <p id="word-display" class="m1bot"></p>
                     </div>
-                    <div class="flexCol w20 m2bot">
+                    <div class="flexCol w20">
                         <input type="text" id="word" class="buttonText m1bot"></input>
-                        <button id="tryWord" class="button">Try word</button>
+                        <button id="tryWord" class="button m2bot m4top">Try Letter</button>
                     </div>
                 </div>
                 <div id="right" class="flexCol w20 ta m4rightta">
@@ -68,7 +63,6 @@
                         <h4 class="m1bot">Current Life</h4>
                         <h4 id="currentLife" class="m1bot">0</h4>
                     </div>
-
                 </div>
             </div>
         </div>
