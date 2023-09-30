@@ -1,4 +1,4 @@
-class jugador{
+export class jugador{
     constructor(){
         this.nombre=nombre;
         this.vidas=10;
