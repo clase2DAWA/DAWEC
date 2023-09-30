@@ -1,26 +1,46 @@
 import { Juego } from "./juego.js";
 import { Jugador } from "./jugador.js";
 
+
+
+
+
+
+
+
+
 var juego=new Juego();
-var jugador1= new Jugador();
+var jugador= new Jugador();
+jugador.dibujaVida();
 
-jugador1.dibujaVida();
+
+function volverJugar(){
+    juego=new Juego();
+    jugador = new Jugador();
+
+    jugador.dibujaVida();
+}
 
 
-document.getElementById("enviar").addEventListener("click", function (){
 
-    var letra=juego.obtenerLetra();
-    console.log(letra)
-    
-    if(letra){
-        juego.ponerLetra();
-    }else{
-        jugador1.letraFallada();
+function partida(){
 
+    jugador.dibujaVida();
+
+    if(!juego.ponerLetra()) {
+        jugador.letraFallada();
     }
-    jugador1.dibujaVida();
+    
+    juego.ganar(jugador)
+        
+
+    jugador.dibujaVida();
+    
 
 
-});
+}
+
+document.getElementById("enviar").addEventListener("click", partida);
+document.getElementById("volverJugar").addEventListener("click", volverJugar);
 
 

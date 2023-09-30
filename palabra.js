@@ -1,18 +1,28 @@
-class Palabra{
+class Palabra {
  
-    constructor(){
-        this.palabrasDisponibles=["coches", "camion","avion","moto"];
+    constructor() {
+        
+        this.palabrasDisponibles=["coche", "camion","avion","moto","bicicleta"];
         this.numIndex=Math.floor(Math.random()*this.palabrasDisponibles.length);
         this.palabra=this.palabrasDisponibles[this.numIndex];
+        
     }
 
-    contieneLetra(letra){
+    contieneLetra(letra) {
+        
         var contiene= false;
-        if(this.palabra.includes(letra)){
+        
+        if(this.palabra.includes(letra)) {
+            
             contiene=true;
         }
 
         return contiene;
+    }
+    
+    getPalabra() {
+        
+        return this.palabra;
     }
 
 

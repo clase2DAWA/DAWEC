@@ -15,6 +15,10 @@ class Jugador{
         vidas.textContent="Vidas " + this.vida;
     }
 
+    getVidas(){
+        return this.vida;
+    }
+
 
 }
 
