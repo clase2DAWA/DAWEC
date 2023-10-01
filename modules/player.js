@@ -4,7 +4,7 @@ GAME.Crear = class {
   
     constructor(){   
         this.life = 4;
-    let word = new Word(); 
+        let word = new Word(); 
         this.respuesta = word.getRespuesta();
         console.log("llega");
        document.getElementById("respuesta").textContent =  '_'.repeat(this.respuesta.length) ;
