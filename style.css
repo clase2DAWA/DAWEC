@@ -1,0 +1,107 @@
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;   
+}
+#Ahorcado{
+    background-color: beige;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    top: 10%;
+    left: 25%;
+}
+.palo{
+    width: 2em;
+    height: 16em;
+    background-color: black;
+    position: absolute;
+   
+    top: 40%;
+    left: 20%;
+}
+.palo2{
+    width: 2em;
+    height: 16em;
+    background-color: black;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 15%;
+    left: 32%;
+}
+.cabeza{
+    width: 2em;
+    height: 2em;
+    background-color: black;
+    position: absolute;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    top: 50%;
+    left: 40%;
+}
+.cuerda{
+    width: 0.2em;
+    height: 2em;
+    background-color: black;
+    position: absolute;
+   
+   
+    top: 46%;
+    left: 41.5%;
+}
+.cuerpo{
+    width: 1em;
+    height: 3em;
+    background-color: black;
+    position: absolute;
+   
+   
+    top: 55%;
+    left: 41%;
+}
+.pierna{
+    width: 0.8em;
+    height: 3em;
+    background-color: black;
+    position: absolute;
+    transform: rotate(30deg);
+   
+    top: 63%;
+    left: 40%;
+} 
+#texto{
+    position: relative;
+    left: 45%;
+    top: 50%;
+}
+#respuesta{
+    position: relative;
+    left: 45%;
+    letter-spacing:10px;
+    top: 40%;
+}
+#botonText{
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
+#textVidas{
+    position:absolute;
+    left: 40%;
+    top: 30%;
+}
+#vidas{
+    position:absolute;
+    left: 45%;
+    top: 30%;
+}
+#botonreset{
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
