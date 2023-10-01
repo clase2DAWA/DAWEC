@@ -97,6 +97,10 @@ h1 {
     flex: 1;
 }
 
+#hiddenWord{
+    letter-spacing: 15px;
+}
+
 .datos {
     display: flex;
     flex: 1;
@@ -118,7 +122,7 @@ h1 {
     flex-direction: column;
 }
 
-.teclado {
+.keyboard {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
@@ -130,7 +134,7 @@ h1 {
     gap: 5px;
 }
 
-.boton {
+.button {
     width: 100px;
     /* Ancho del botón en píxeles */
     height: 40px;
