@@ -21,14 +21,12 @@ GAME.game = class game {
             if (palabraAleatoria.includes(letra)) {
                 for (let i = 0; i < this.palabra.longitudPalabra(); i++) {
                     if (palabraAleatoria[i] === letra) {
-                        this.palabraAdivinada = this.palabraAdivinada.substr(0, i * 2) + letra + this.palabraAdivinada.substr(i * 2 + 1);
+                        this.palabraAdivinada = this.palabraAdivinada.substring(0, i * 2) + letra + this.palabraAdivinada.substring(i * 2 + 1);
                     }
                 }
                 if (this.palabraAdivinada.replace(/\s+/g, '') === palabraAleatoria) {
-                    const win = document.getElementById('comprobar');
-                    const input = document.getElementById('letra');
-                    win.disabled = true;
-                    input.disabled = true;
+                    document.getElementById('comprobar').disabled = true;
+                    document.getElementById('letra').disabled = true;
                     return "victoria";
                 } else {
                     return true;
@@ -36,10 +34,8 @@ GAME.game = class game {
             } else {
                 this.jugador.quitarIntento();
                 if (this.jugador.getIntentosRestantes() <= 0) {
-                    const lose = document.getElementById('comprobar');
-                    const input = document.getElementById('letra');
-                    lose.disabled = true;
-                    input.disabled = true;
+                    document.getElementById('comprobar').disabled = true;
+                    document.getElementById('letra').disabled = true;
                     return "derrota";
                 }
                 return false;
@@ -65,6 +61,8 @@ GAME.game = class game {
         this.jugador = new PLAYER.player();
         this.letrasUsadas = [];
         this.palabraAdivinada = "_ ".repeat(this.palabra.longitudPalabra());
+        document.getElementById('comprobar').disabled = false;
+        document.getElementById('letra').disabled = false;
     }
 }
 
