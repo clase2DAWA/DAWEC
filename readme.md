@@ -15,10 +15,11 @@ Level Progression: There are multiple levels until complete the game. Each level
 
 ## Future Features
 
-Scoring System : System that rewards players for guessing words correctly and quickly
+Scene system : Graphic design which shows different environment for each game level.
 
-Word Diccionary : Using API to access any main diccionary where we can have
-multiple choices for each group of words.
+Scoring System : System that rewards players for guessing words correctly and quickly.
+
+Word Diccionary : Using API to access any main diccionary where we can have multiple choices for each group of words.
 
 Multiplayer Mode : Consider adding a multiplayer mode where players can take turns guessing words.
 

@@ -10,12 +10,13 @@ const WORDDISPLAY= document.getElementById('word-display');
 const MESSAGEBOX = document.getElementById('word-message');
 const STYLESMSGBOX = document.querySelector('word-messageStyle');
 const DIFFICULTYSELECT = document.getElementById('difficulty');
-const DIFFICULTYDIV = document.getElementById('difficultyDiv')
-
+const DIFFICULTYDIV = document.getElementById('difficultyDiv');
+const EXITDISPLAY = document.getElementById('exitDisplay');
+const EXIT = document.getElementById('exit');
 
 STARTNEWGAME.addEventListener('click', () => {
 
-    DIFFICULTYDIV.style.display='none';
+    exitDisplay();
     playRestart();
     
 });
@@ -73,9 +74,16 @@ TRYWORD.addEventListener('click', () => {
     }
 });
 
+    EXIT.addEventListener ('click' , () => {
+
+        exit();
+
+    });
+
+
+
 function showLetter() {
 
-    
     WORDDISPLAY.innerHTML = NEWGAME.words.checkUnderScore();
 }
 
@@ -126,6 +134,22 @@ function resetInterface() {
     clearMessage();
     TRYWORD.style.display = "block";
     WORD.style.display = "block";
+}
+
+function exitDisplay() {
+
+    DIFFICULTYDIV.style.display="none";
+    EXITDISPLAY.style.display="block";
+
+}
+
+function exit() {
+
+    DIFFICULTYDIV.style.display="block";
+    EXITDISPLAY.style.display="none";
+    TRYWORD.style.display="none";
+    MESSAGEBOX.innerHTML = "Select game difficulty and start the game";
+    
 }
 
 
