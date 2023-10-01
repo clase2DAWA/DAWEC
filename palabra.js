@@ -8,6 +8,4 @@ elegir () {
     return this.solucion[this.palabras]; 
 };
 
- 
- 
 }

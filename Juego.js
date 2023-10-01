@@ -28,8 +28,8 @@ class Game {
         }
       }
     game(y){
+        this.word.elegir;
         while(this.player.vivo=true){
-            this.word.elegir;
             this.buscar(y);
         }
     }
