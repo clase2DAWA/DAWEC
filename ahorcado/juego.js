@@ -1,5 +1,5 @@
 import { Palabra } from "./palabra";
-import { jugador } from "./jugador";
+import { Jugador } from "./jugador";
 
 
 export class Juego{

@@ -1,5 +1,5 @@
-export class jugador{
-    constructor(){
+export class Jugador{
+    constructor(nombre){
         this.nombre=nombre;
         this.vidas=10;
     }
