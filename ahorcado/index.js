@@ -1,12 +1,12 @@
-import { Juego } from "./juego";
-import { Jugador } from "./jugador";
-
+import { Juego } from "./juego.js";
+import { Jugador } from "./jugador.js";
+import { Palabra } from "./palabra.js";
 
 let pala=new Palabra();
 let jug1=new Jugador("Pablo");
 let juego=new Juego(pala);
 juego.mostrarGuiones(pala);
-document.getElementById("gui").innerHTML(juego.mostrarGuiones(pala));
+document.getElementById("gui").innerHTML=juego.mostrarGuiones(pala);
 
 
 
