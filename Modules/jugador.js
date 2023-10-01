@@ -6,5 +6,6 @@ class jugador {
 
     unIntentoMenos(){
         this.intentos--;
+        return this.intentos;
     }
 }
