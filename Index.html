@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="module" src="index.js"></script>
-    </head>
-    <body>
-        <div class="contenedor">
-            <div class="cabecera">
-                <div></div>
-                <div class="titulo">
-                    <h1>AHORCADO</h1>
-                </div>
-                <div class="reset">
-                    <button>
-                        <img class="botonReset"src="Imagenes/restart-5.png" alt="">
-                    </button>
-                </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="cabecera">
+            <div></div>
+            <div class="titulo">
+                <h1>AHORCADO</h1>
             </div>
-            <div class="interfaz">
-                <div class="dibujo">
-                    <img id="graficos" src="TimeLapse/10.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="datos">
-                        <div class="vidas">
-                            <h1>LIFE</h1>
-                            <h1>10</h1>
-                        </div>
-                        <div class="crono">
-                            <h1>TIME</h1>
-                            <h1>30</h1>
-                        </div>
-                    </div>
-                    <div class="palabra">
-                        <p id="hiddenWord"></p>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="keyboard">
-                <input class="button" type="button" value="A">
-                <input class="button" type="button" value="B">
-                <input class="button" type="button" value="C">
-                <input class="button" type="button" value="D">
-                <input class="button" type="button" value="E">
-                <input class="button" type="button" value="F">
-                <input class="button" type="button" value="G">
-                <input class="button" type="button" value="H">
-                <input class="button" type="button" value="I">
-                <input class="button" type="button" value="J">
-                <input class="button" type="button" value="K">
-                <input class="button" type="button" value="L">
-                <input class="button" type="button" value="M">
-                <input class="button" type="button" value="N">
-                <input class="button" type="button" value="Ñ">
-                <input class="button" type="button" value="O">
-                <input class="button" type="button" value="P">
-                <input class="button" type="button" value="Q">
-                <input class="button" type="button" value="R">
-                <input class="button" type="button" value="S">
-                <input class="button" type="button" value="T">
-                <input class="button" type="button" value="U">
-                <input class="button" type="button" value="V">
-                <input class="button" type="button" value="W">
-                <input class="button" type="button" value="X">
-                <input class="button" type="button" value="Y">
-                <input class="button" type="button" value="Z">
+            <div class="reset">
+                <button id="restart">
+                    <img class="botonReset" src="Imagenes/restart-5.png" alt="">
+                </button>
             </div>
         </div>
-    </body>
+        <div class="interfaz">
+            <div class="dibujo">
+                <img id="graphics" src="TimeLapse/default.png" alt="">
+            </div>
+            <div class="info">
+                <div class="datos">
+                    <div class="vidas">
+                        <h1>LIFE</h1>
+                        <h1 id="lifeCounter">10</h1>
+                    </div>
+                    <div class="crono">
+                        <h1>TIME</h1>
+                        <h1 id="countdown">60</h1>
+                    </div>
+                </div>
+                <div class="palabra">
+                    <p id="hiddenWord"></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="keyboard">
+            <input class="button" type="button" value="A">
+            <input class="button" type="button" value="B">
+            <input class="button" type="button" value="C">
+            <input class="button" type="button" value="D">
+            <input class="button" type="button" value="E">
+            <input class="button" type="button" value="F">
+            <input class="button" type="button" value="G">
+            <input class="button" type="button" value="H">
+            <input class="button" type="button" value="I">
+            <input class="button" type="button" value="J">
+            <input class="button" type="button" value="K">
+            <input class="button" type="button" value="L">
+            <input class="button" type="button" value="M">
+            <input class="button" type="button" value="N">
+            <input class="button" type="button" value="Ñ">
+            <input class="button" type="button" value="O">
+            <input class="button" type="button" value="P">
+            <input class="button" type="button" value="Q">
+            <input class="button" type="button" value="R">
+            <input class="button" type="button" value="S">
+            <input class="button" type="button" value="T">
+            <input class="button" type="button" value="U">
+            <input class="button" type="button" value="V">
+            <input class="button" type="button" value="W">
+            <input class="button" type="button" value="X">
+            <input class="button" type="button" value="Y">
+            <input class="button" type="button" value="Z">
+        </div>
+    </div>
+</body>
+
 </html>

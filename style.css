@@ -16,7 +16,8 @@ img {
     height: auto;
 }
 
-html,body {
+html,
+body {
     height: 100%;
 }
 
@@ -28,11 +29,11 @@ h1 {
     font-size: 3em;
 }
 
-.vidas h1:last-child{
+.vidas h1:last-child {
     color: crimson;
 }
 
-.crono h1:last-child{
+.crono h1:last-child {
     color: green;
 }
 
@@ -97,7 +98,7 @@ h1 {
     flex: 1;
 }
 
-#hiddenWord{
+#hiddenWord {
     letter-spacing: 15px;
 }
 
