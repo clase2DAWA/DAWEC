@@ -1,21 +1,24 @@
 var GAME = GAME || {};
+import {Word} from "./word.js"
 GAME.Crear = class {
   
     constructor(){   
         this.life = 4;
-        this.respuesta = "hamburguesa";
-        console.log(this.respuesta);
+    let word = new Word(); 
+        this.respuesta = word.getRespuesta();
+        console.log("llega");
+       document.getElementById("respuesta").textContent =  '_'.repeat(this.respuesta.length) ;
     }
     checkletra( letra){
 
-        if (this.respuesta.includes(letra)) {
+        if (this.respuesta.includes(letra)) { 
             this.respuesta.indexOf(letra);
             let cadenaAct = document.getElementById("respuesta").textContent+"";
             console.log(cadenaAct);
-            let arregloCadena = cadenaAct.split(""); // Convertir la cadena en un array de caracteres
+            let arregloCadena = cadenaAct.split(""); 
             arregloCadena[this.respuesta.indexOf(letra)] = letra; 
-            arregloCadena[this.respuesta.lastIndexOf(letra)] = letra;// Cambiar la letra en la posición deseada
-            document.getElementById("respuesta").textContent = arregloCadena.join("") ; // Volver a convertir el array en una cadena
+            arregloCadena[this.respuesta.lastIndexOf(letra)] = letra;
+            document.getElementById("respuesta").textContent = arregloCadena.join("") ; 
             if (cadenaAct == this.respuesta){
                 document.getElementById("respuesta").textContent = "Felicidades Has Ganado" ;
             }
