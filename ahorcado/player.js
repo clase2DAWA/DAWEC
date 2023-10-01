@@ -1,11 +1,14 @@
 
-//añade un listener a la página que al pulsar una tecla,
-//consiga el caracter de esa letra
-let letter = "";
-document.addEventListener("keydown", (e) => {
-    letter = e.key;   
-})
-
 export let Player = class Player {
-
+    constructor (game) {
+        this.letter = "";
+        this.game = game;
+    }
+    addKeyDown() {       
+        document.addEventListener("keydown", (e) => {
+            this.letter = e.key;
+            console.log(this.letter);
+            this.game.refresh(this.letter);
+        })
+    }
 }

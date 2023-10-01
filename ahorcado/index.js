@@ -1,11 +1,12 @@
 import {Game} from "./game.js";
 import {Player} from "./player.js";
-import {Word} from "./word.js";
+
 
 var Ahorcado = Ahorcado || {};//namespace
 
-Ahorcado.Game = Game;//declaración clase vacia
-Ahorcado.Player = Player;//declaración clase vacia
-Ahorcado.Word = Word;//declaración clase vacia
+Ahorcado.Game = new Game;
+Ahorcado.Player = new Player(Ahorcado.Game);
+Ahorcado.Game.init();
+Ahorcado.Player.addKeyDown();
 
 export {Ahorcado};

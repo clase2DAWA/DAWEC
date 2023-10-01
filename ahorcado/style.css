@@ -9,10 +9,22 @@ div{
     margin-top: 20px;
 }
 
+.word {
+    letter-spacing: 7px;
+    font-size: 50px;
+}
+
 .hearts img{
     width: 40px;
     aspect-ratio: 1/1;/* hace que mantenga la proporción de la imagen */
 
+}
+
+#play{
+    width: 50px;
+    font-size: 50px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 
