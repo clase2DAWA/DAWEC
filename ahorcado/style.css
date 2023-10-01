@@ -2,10 +2,11 @@
     margin: 0;
 }
 
-.hearts{
+div{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .hearts img{
@@ -13,4 +14,6 @@
     aspect-ratio: 1/1;/* hace que mantenga la proporción de la imagen */
 
 }
+
+
 

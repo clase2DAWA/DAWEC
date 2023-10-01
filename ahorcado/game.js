@@ -4,7 +4,6 @@ import { Player } from "./player.js";
 let word = new Word().randomWord;
 let letter2 = new Player().letter;
 
-
 console.log(word);
 console.log(letter2);
 
@@ -14,6 +13,15 @@ export let Game = class Game {
         this.player = new Player();
         this.lives = 10;
         this.gameOver = false;
+    }
+
+    init() {
+        const sizeLenght = document.getElementById("word");
+        let displayWord = "";
+        for (let index = 0; index < this.word.length; index++) {
+            wordDisplay += "_";            
+        }
+        sizeLenght.textContent = displayWord;
     }
 
     correctLetter() {

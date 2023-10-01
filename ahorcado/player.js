@@ -6,7 +6,6 @@ document.addEventListener("keydown", (e) => {
     letter = e.key;   
 })
 
-
 export let Player = class Player {
 
 }
