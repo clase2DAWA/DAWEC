@@ -10,7 +10,8 @@ class Game {
         this.arrCharactWord = this.word.split('');
         this.arrUndercores = [];
         this.arrOcurrences = [];
-        this.useLetters = [];
+        this.usedLetters = [];
+
 
     };
     undercores() {
@@ -32,6 +33,31 @@ class Game {
             index = this.arrCharactWord.indexOf(letter, index + 1);
         }
     }
+    compareArr(){
+        let arr1 = this.arrCharactWord;
+        let arr2 = this.arrUndercores;
+        let distint = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            if(arr1[i] != arr2[i]){
+                distint++;
+            }
+        }
+        return distint;
+    }
+    letterUsed(letter){
+        this.usedLetters.push(letter);
+    }
+    countLetterUsed(letter){
+        let position = this.usedLetters.indexOf(letter);
+        let count = 0;
+        while (position != -1) {
+            count++;
+            position = this.usedLetters.indexOf(letter, position + 1);
+        }
+        return count;
+    }
+    
+    
 
 };
 export { Game };

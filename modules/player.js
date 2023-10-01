@@ -4,7 +4,10 @@ class Player {
         this.lives = 8;
     };
     failLetter(){
-        return this.lives--;
+        while(this.lives > 0){
+          return this.lives--;  
+        }
+        
     };
 };
 export {Player};
