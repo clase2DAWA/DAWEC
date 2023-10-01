@@ -18,6 +18,7 @@ STARTNEWGAME.addEventListener('click', () => {
 
     exitDisplay();
     playRestart();
+    MESSAGEBOX.innerHTML = "Writte a letter in the box and try!";
     
 });
 
@@ -45,7 +46,7 @@ DIFFICULTYSELECT.addEventListener('change', () => {
 
 TRYWORD.addEventListener('click', () => {
 
-    NEWGAME.words.compareLetter(WORD.value);
+    NEWGAME.words.checkLetterValid(WORD.value);
     showLetter();
     showMessage();
 

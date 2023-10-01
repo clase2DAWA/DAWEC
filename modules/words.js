@@ -73,6 +73,20 @@ WORDS.words = class {
         }
     }
 
+    hasOneCharacter(letter) {
+
+        return letter.length==1;
+
+    }
+
+    checkLetterValid(letter) {
+
+        return this.hasOneCharacter(letter)
+        ? this.compareLetter(letter)
+        : this.invalidLetter();
+
+    }
+
     compareLetter(letter){
 
         let correctedLetter = letter.toLowerCase().trim();
@@ -92,6 +106,13 @@ WORDS.words = class {
 
         let length = this.currentGroupWords.length;
         return this.currentGroupWords[Math.floor(Math.random() * length )];
+    }
+
+    invalidLetter() {
+
+        this.miss = false;
+        this.msg = "Has introducido mas de un caracter"
+
     }
 
     letterFound(letter) {

@@ -148,6 +148,7 @@ footer { text-align: right; }
 .m2left { margin-left: 2rem; }
 .m4left { margin-left: 4rem; }
 .m2right { margin-right: 2rem; }
+.m3bot { margin-bottom: 3rem; }
 .m4top { margin-top: 4rem; }
 .m4right { margin-right: 4rem; }
 #mainImg { width: 50vh; }
@@ -202,6 +203,7 @@ footer { text-align: right; }
     width: 20rem;
     margin: auto; 
     text-shadow:0px 1px 0px #44464a;
+    
 }
 
 .word-messageStyle {
