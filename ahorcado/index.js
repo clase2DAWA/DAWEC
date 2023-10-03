@@ -9,10 +9,11 @@ let palabra = new PALABRA.palabra();
 var palabraSelec = palabra.seleccionarPalabra();
 let letrasAdivinadas = []; // Array para letras adivinadas
 let letrasNoAdivinadas = palabraSelec.split(""); // Array para letras no adivinadas, inicialmente contiene todas las letras de la palabra
+let visualizacion = "";
 
 // Función para actualizar la visualización de la palabra a adivinar
 function actualizarVisualizacion() {
-    let visualizacion = "";
+    visualizacion = "";
     for (let letra of palabraSelec) {
         if (letrasAdivinadas.includes(letra)) {
             visualizacion = visualizacion + letra + " ";
@@ -29,6 +30,7 @@ document.getElementById("check").addEventListener("click", function() {
     let letraUsuario = document.getElementById("introduceLetra").value;
     juego.comprobarPalabra(letraUsuario, palabraSelec, letrasAdivinadas, letrasNoAdivinadas);
     actualizarVisualizacion();
+    console.log(juego.mostrarVidas);
 
     // Verificar si el jugador ha ganado
     if (!visualizacion.includes("_")) {

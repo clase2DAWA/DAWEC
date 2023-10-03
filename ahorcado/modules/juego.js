@@ -21,8 +21,8 @@ JUEGO.juego = class {
                 // La letra no está en la palabra
                 this.letrasIncorrectas.push(letraUsuario);
                 document.getElementById("pista").innerHTML = "Has introducido estas letras y son incorrectas: " + this.letrasIncorrectas.join(", ");
-                jugador.restarVida();
-                let resultado = jugador.comprobarVidas();
+                this.jugador.restarVida();
+                let resultado = this.jugador.comprobarVidas();
                 if (resultado === "Has perdido") {
                     document.getElementById("pista").innerHTML = "¡Has perdido! La palabra era: " + palabraEscogida;
                 }
@@ -30,6 +30,10 @@ JUEGO.juego = class {
         }
 
        
+    }
+
+    mostrarVidas(){
+        return this.jugador.vidas();
     }
 }
 
